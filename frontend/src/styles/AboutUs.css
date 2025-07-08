@@ -1,0 +1,183 @@
+/* AboutUs.css */
+/* Main container */
+.about-us {
+  background: linear-gradient(135deg, #1565c0, #42a5f5);
+  padding: 60px 20px;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Titles */
+.about-title {
+    margin-top: 100px;
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.about-subtitle {
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin-bottom: 40px;
+  color: #f4f7fa;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Content layout */
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  padding: 40px;
+  box-shadow: 0 10px 25px rgba(41, 128, 185, 0.3);
+}
+
+/* Image section */
+.about-image-container {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+  display: flex;
+  justify-content: center;
+}
+
+.about-image {
+  width: 100%;
+  height: 300px;
+  background-color: #f8fafc;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Text content */
+.about-text {
+  flex: 1;
+  min-width: 300px;
+  text-align: left;
+}
+
+.about-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color: #f0f0f0;
+}
+
+/* Stats section */
+.about-stats {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 20px;
+  border-radius: 20px;
+  flex: 1;
+  min-width: 120px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+}
+
+.stat-card h3 {
+  font-size: 2rem;
+  margin-bottom: 5px;
+  color: #f39c12;
+}
+
+.stat-card p {
+  font-size: 0.95rem;
+}
+
+/* Button */
+.learn-more-btn {
+  background-color: #f39c12;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  padding: 14px 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 6px 15px rgba(243, 156, 18, 0.5);
+}
+
+.learn-more-btn:hover {
+  background-color: #d67e09;
+  transform: scale(1.05);
+}
+
+/* Responsive design */
+@media (max-width: 900px) {
+  .about-content {
+    flex-direction: column;
+    padding: 30px;
+    gap: 30px;
+  }
+  
+  .about-image-container,
+  .about-text {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .about-title {
+    font-size: 1.8rem;
+  }
+  
+  .about-subtitle {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-us {
+    padding: 40px 10px;
+  }
+  
+  .about-content {
+    padding: 20px;
+    border-radius: 20px;
+  }
+  
+  .about-title {
+    font-size: 1.5rem;
+  }
+  
+  .about-subtitle {
+    font-size: 1rem;
+  }
+  
+  .about-image {
+    height: 200px;
+  }
+  
+  .stat-card {
+    min-width: 100px;
+    padding: 15px;
+  }
+  
+  .learn-more-btn {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+}

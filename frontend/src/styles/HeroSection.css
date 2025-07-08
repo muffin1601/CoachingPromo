@@ -1,0 +1,232 @@
+/* Hero Section */
+.hero {
+    top: 100px;
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full screen height */
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Adds a soft shadow */
+}
+
+/* Slider */
+.slider {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/* Slide */
+.slide.active {
+    opacity: 1;
+}
+
+/* Overlay to darken the background */
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2); /* Adjusted opacity for darker effect */
+    top: 0;
+    left: 0;
+}
+
+/* Slide content */
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    text-align: center;
+}
+
+.slide-content {
+    text-align: center;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+}
+
+/* Tag */
+.tag {
+    font-size: 23px;
+    font-weight: bold;
+    color: white; /* Sky Blue */
+}
+
+/* Title */
+.slide-title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 10px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Dark shadow for better contrast */
+    color: white ; /* Sky Blue */
+}
+
+/* Subtitle */
+.slide-subtitle {
+    font-size: 23px;
+    font-weight: 100;
+    color: white;
+}
+
+/* Button */
+.btn-hero {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+padding: 5px;
+  background-color: #d62828; /* Crimson Red */
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  border: none;
+  border-radius: 15px;
+  margin-top: 20px;
+  min-width: 140px;
+  height: 45px;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 4px 12px rgba(214, 40, 40, 0.2);
+  
+}
+
+.btn-hero:hover {
+  background-color: #b72020;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(214, 40, 40, 0.3);
+}
+
+
+/* Navigation Arrows */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 24px;
+    width: 55px;
+    height: 60px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* Dots */
+.dots {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background: white;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.dot.active {
+    opacity: 1;
+    background: var(--primary-color); /* Sky Blue */
+}
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .slide-title {
+        font-size: 2.2rem;
+    }
+    .slide-content {
+        width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        height: 70vh;
+        min-height: 400px;
+    }
+    .slide-title {
+        font-size: 1.7rem;
+    }
+    .slide-subtitle,
+    .tag {
+        font-size: 18px;
+    }
+    .btn-hero {
+        min-width: 110px;
+        height: 38px;
+        font-size: 14px;
+        padding: 4px;
+    }
+    .prev, .next {
+        width: 40px;
+        height: 44px;
+        font-size: 18px;
+        padding: 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        height: 40vh;
+        min-height: 250px;
+        margin-bottom: 10px;
+    }
+    .slide-content {
+        width: 98%;
+        padding: 0 5px;
+    }
+    .slide-title {
+        font-size: 1.1rem;
+        margin: 6px 0;
+    }
+    .slide-subtitle,
+    .tag {
+        font-size: 14px;
+    }
+    .btn-hero {
+        min-width: 90px;
+        height: 32px;
+        font-size: 12px;
+        margin-top: 12px;
+        padding: 2px;
+    }
+    .prev, .next {
+        display: none;
+    }
+    .dots {
+        bottom: 10px;
+    }
+    .dot {
+        width: 8px;
+        height: 8px;
+        margin: 0 2px;
+    }
+}

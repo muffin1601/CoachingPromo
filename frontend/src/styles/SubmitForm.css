@@ -1,0 +1,117 @@
+
+.popup-form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure overlay is above other content */
+}
+.heading{
+  font-size: 1.6rem;
+    color: #222;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 600;
+
+}
+.popup-form {
+  background: rgba(255, 255, 255, 0.95);
+    padding: 25px;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+    animation: slideUp 0.3s ease-in-out;
+    backdrop-filter: blur(10px);
+    z-index: 9999;
+}
+.popup-form input {
+  width: 90%;
+    padding: 12px;
+    font-size: 1rem;
+    margin-left: 10px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    outline: none;
+    margin-bottom: 20px;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-left: 10px;
+}
+
+.download-submit-btn{
+  background: #e04e4e;
+    color: #ffffff;
+  padding: 8px 18px;
+  border: none;
+  border-radius: 15px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+  box-shadow: 0 4px 12px rgba(224, 78, 78, 0.2);
+  text-align: center;
+  min-width: 100px;
+  user-select: none;
+}
+.cancel-btn {
+  background: rgb(158, 159, 160);
+    color: #ffffff;
+  padding: 8px 18px;
+  border: none;
+  border-radius: 15px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+  box-shadow: 0 4px 12px rgba(224, 78, 78, 0.2);
+  text-align: center;
+  min-width: 100px;
+  margin-right: 15px;
+}
+
+@media (max-width: 600px) {
+  .popup-form {
+    padding: 15px;
+    width: 98%;
+    max-width: 98vw;
+    border-radius: 10px;
+  }
+  .popup-form input {
+    width: 96%;
+    font-size: 0.95rem;
+    padding: 10px;
+    margin-left: 0;
+  }
+  .form-buttons {
+    flex-direction: column;
+    gap: 12px;
+    margin-left: 0;
+  }
+  .download-submit-btn,
+  .cancel-btn {
+    min-width: unset;
+    width: 100%;
+    font-size: 1rem;
+    padding: 10px 0;
+    margin-right: 0;
+  }
+  .heading {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+  }
+}

@@ -1,0 +1,249 @@
+/* LeadTable.css */
+
+.lead-card {
+  margin-top: 100px;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 24px 28px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+}
+
+.lead-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.lead-header h5 {
+  font-size: 24px;
+  font-weight: 500;
+  color: #222;
+  margin: 0;
+}
+
+/* Common styles for all buttons */
+.btn-filter, .btn-add, .btn-subcat, .btn-cat {
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  transition: background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+  margin-right: 12px;
+  min-width: 110px;
+  text-align: center;
+  user-select: none;
+  border: 2px solid transparent;
+  background-color: white;
+  color: #444; /* Neutral base color */
+  box-shadow: none;
+}
+
+/* Individual button colors with subtle borders */
+.btn-filter {
+  border-color: #d35400;
+  color: #d35400; /* Warm Orange */
+}
+
+.btn-filter:hover,
+.btn-filter:focus {
+  background-color: #d35400;
+  color: white;
+  box-shadow: 0 0 8px rgba(211, 84, 0, 0.4);
+}
+
+.btn-add {
+  border-color: #43a047;
+  color: #43a047; /* Green */
+}
+
+.btn-add:hover,
+.btn-add:focus {
+  background-color: #43a047;
+  color: white;
+  box-shadow: 0 0 8px rgba(67, 160, 71, 0.4);
+}
+
+.btn-subcat {
+  border-color: #1976d2;
+  color: #1976d2; /* Blue */
+}
+
+.btn-subcat:hover,
+.btn-subcat:focus {
+  background-color: #1976d2;
+  color: white;
+  box-shadow: 0 0 8px rgba(25, 118, 210, 0.4);
+}
+
+.btn-cat {
+  border-color: #732d91;
+  color: #732d91; /* Purple */
+}
+
+.btn-cat:hover,
+.btn-cat:focus {
+  background-color: #732d91;
+  color: white;
+  box-shadow: 0 0 8px rgba(115, 45, 145, 0.4);
+}
+
+
+.lead-btn-group button:hover {
+  filter: brightness(90%);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.18);
+}
+
+.lead-table-wrapper {
+  overflow-x: auto;
+  border-radius: 12px;
+  box-shadow: inset 0 0 8px rgba(0,0,0,0.05);
+}
+
+.lead-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 8px;
+  font-size: 14px;
+  color: #444;
+}
+
+.lead-table thead {
+  background-color: #fafafa;
+  border-bottom: 2px solid #ddd;
+}
+
+.lead-table th,
+.lead-table td {
+  padding: 14px 18px;
+  vertical-align: middle;
+}
+
+.lead-table th {
+  font-weight: 600;
+  color: #555;
+  text-align: left;
+}
+
+.lead-table tbody tr {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  transition: background-color 0.2s ease;
+}
+
+.lead-table tbody tr:hover {
+  background-color: #f5f9ff;
+}
+
+.lead-info {
+  display: flex;
+  align-items: center;
+}
+
+.lead-details {
+  margin-left: 10px;
+}
+
+.lead-name {
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 4px;
+}
+
+.lead-email {
+  color: #777;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.lead-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.lead-actions button {
+  border: 1.5px solid transparent; /* reserve border space */
+  border-radius: 15px;
+  padding: 6px 10px;
+  height: 38px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #fff;
+  /* background-color: transparent; */
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.btn-edit {
+  background-color: #1976d2;
+  border-color: #1976d2;
+}
+
+.btn-edit:hover {
+  background-color: #fff;
+  color: #1976d2;
+  border-color: #1976d2;
+  box-shadow: 0 4px 12px rgba(25, 118, 210, 0.3);
+}
+
+.btn-delete {
+  background-color: #e53935;
+  border-color: #e53935;
+}
+
+.btn-delete:hover {
+  background-color: #fff;
+  color: #e53935;
+  border-color: #e53935;
+  box-shadow: 0 4px 12px rgba(229, 57, 53, 0.3);
+}
+
+.lead-pagination-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 28px;
+  font-size: 15px;
+  color: #444;
+}
+
+.lead-pagination {
+  list-style: none;
+  display: flex;
+  gap: 14px;
+  padding: 0;
+  margin: 0;
+}
+
+.page-item button {
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #f5f5f5;
+  color: #555;
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.page-item.active button {
+  background-color: #1273f3;
+  color: white;
+  box-shadow: 0 4px 10px rgba(18, 115, 243, 0.4);
+}
+
+.page-item.disabled button {
+  cursor: not-allowed;
+  opacity: 0.4;
+  background-color: #eee;
+  color: #aaa;
+}

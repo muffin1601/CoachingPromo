@@ -1,0 +1,157 @@
+/* CustomizerPage.css */
+
+.customizer-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1565c0, #42a5f5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  padding: 20px 0 40px;
+}
+
+.customizer-title {
+  font-size: 2rem;
+  font-weight: 500;
+  margin: 100px 0 20px;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+  padding: 0 15px;
+}
+
+.customizer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 85%;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  box-shadow: 0 10px 25px rgba(41, 128, 185, 0.3);
+  padding: 30px;
+  margin-bottom: 30px;
+  gap: 20px;
+}
+
+.vertical-toolbar {
+  width: 10%;
+  height: 99%;
+}
+
+.customizer-controls {
+  width: 37%;
+  max-width: 40%;
+  height: 93%;
+  background: #ffffff;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.customizer-main {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+}
+
+.top-tools-bar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.top-tools-bar > * {
+  flex: 1;
+  min-width: 0;
+}
+
+.canvas-wrapper {
+  width: 50%;
+  background: #f8fafc;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-top: 20px; */
+}
+
+.thumbnail-wrapper,
+.customizer-content {
+  display: none;
+}
+
+
+/* ---------- Responsive Styling ---------- */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .customizer-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .customizer-main {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .canvas-wrapper,
+  .customizer-controls {
+    width: 90%;
+    max-width: none;
+  }
+
+  .vertical-toolbar {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .customizer-main {
+    flex-direction: column;
+    gap: 0px;
+  }
+
+  .customizer-controls {
+    order: 1;
+    width: 90%;
+    padding: 15px;
+  }
+
+  .canvas-wrapper {
+    order: 2;
+    width: 95%;
+    padding: 10px;
+    margin-top: 20px;
+  }
+
+  .top-tools-bar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .customizer-container {
+    width: 95%;
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .customizer-title {
+    font-size: 1rem;
+    margin-top: 100px;
+  }
+}

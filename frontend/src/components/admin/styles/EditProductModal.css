@@ -1,0 +1,241 @@
+.edit-product-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(30, 30, 30, 0.5);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.edit-product-modal-container {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    padding: 2rem 2.5rem;
+    max-width: 480px;
+    width: 100%;
+    position: relative;
+    animation: fadeIn 0.2s;
+    max-height: 90vh;
+    overflow-y: auto;
+    }
+
+    .edit-product-modal-form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.1rem 1.5rem;
+    }
+
+    @media (max-width: 600px) {
+        .edit-product-modal-container {
+            padding: 1rem 0.5rem;
+            max-width: 98vw;
+        }
+        .edit-product-modal-form {
+            grid-template-columns: 1fr;
+        }
+    }
+
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+.edit-product-modal-title {
+    font-size: 1.4rem;
+    color: #222;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.edit-product-modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+}
+
+.edit-product-input,
+.edit-product-textarea,
+.edit-product-file-input,
+.edit-product-label,
+.edit-product-btn-cancel,
+.edit-product-btn-save {
+    font-family: inherit;
+}
+
+.edit-product-input,
+.edit-product-textarea {
+    width: 90%;
+    padding: 12px;
+    font-size: 1rem;
+    margin-left: 10px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    outline: none;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.edit-product-input:focus,
+.edit-product-textarea:focus {
+    border-color: #2563eb;
+    outline: none;
+}
+
+.edit-product-textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+.edit-product-label {
+    font-size: 0.98rem;
+    font-weight: 500;
+    margin-bottom: 0.2rem;
+    color: #333;
+    margin-left: 12px;
+}
+
+.edit-product-file-input {
+    margin-top: 0.2rem;
+}
+
+.edit-product-main-image-preview {
+    display: block;
+    margin: 0.5rem 0;
+    max-width: 120px;
+    max-height: 120px;
+    margin-left: 12px;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 1px solid #e5e7eb;
+}
+
+.edit-product-sub-images-preview {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-left: 12px;
+    margin-top: 0.3rem;
+}
+
+.edit-product-sub-image {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid #e5e7eb;
+}
+
+.edit-product-modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.8rem;
+    margin-top: 1.2rem;
+}
+
+.edit-product-btn-cancel,
+.edit-product-btn-save {
+    padding: 0.55rem 1.3rem;
+    border: none;
+    border-radius: 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.18s;
+}
+
+.edit-product-btn-cancel {
+    background: #f3f4f6;
+    color: #374151;
+}
+
+.edit-product-btn-cancel:hover {
+    background: #e5e7eb;
+}
+
+.edit-product-btn-save {
+    background: #2563eb;
+    color: #fff;
+}
+
+.edit-product-btn-save:hover {
+    background: #1d4ed8;
+}
+
+/* styles/EditProductModal.css */
+
+/* Base submit button */
+.submit-button,
+.submit-add-button,
+.submit-s-button,
+.submit-e-button,
+.submit-d-button {
+  padding: 10px 20px;
+  margin-top: 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 15px;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Add button (green) */
+.submit-add-button,
+.submit-button[type="submit-add"] {
+  background-color: #f04949;
+}
+
+.submit-add-button:hover,
+.submit-button[type="submit-add"]:hover {
+  background-color: #e23333;
+}
+
+/* Save button (blue) */
+.submit-s-button,
+.submit-button[type="submit-s"] {
+  background-color: #3498db;
+  font-weight: 500;
+}
+
+.submit-s-button:hover,
+.submit-button[type="submit-s"]:hover {
+  background-color: #2980b9;
+}
+
+/* Edit toggle button (green/blue toggle) */
+.submit-e-button {
+    margin-left: 27px;
+  background-color: #2ecc71;
+}
+
+.submit-e-button:hover {
+  background-color: #27ae60;
+}
+
+/* Delete toggle and delete button (orange/red) */
+.submit-d-button {
+    margin-left: 60px;
+  background-color: #f39c12;
+}
+
+.submit-d-button:hover {
+  background-color: #e67e22;
+}
+
+.submit-button.delete,
+.submit-button[style*="e74c3c"] {
+  background-color: #e74c3c;
+}
+
+.submit-button.delete:hover,
+.submit-button[style*="e74c3c"]:hover {
+  background-color: #c0392b;
+}
