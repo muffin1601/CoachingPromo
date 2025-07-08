@@ -1,0 +1,12 @@
+node_modules/
+.next/
+build/
+dist/
+public/assets/
+uploads/
+.env
+*.zip
+*.mp4
+*.psd
+*.webm
+*.exe
