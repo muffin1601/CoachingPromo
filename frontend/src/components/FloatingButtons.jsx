@@ -37,9 +37,10 @@ const FloatingButtons = () => {
     <div className="floating-buttons">
       {/* Register Button */}
       <a
+       href="#"
         className="register-button"
         onClick={toggleRegistrationForm}
-        data-title="Register Your Institute"
+        data-title="Insert details"
       >
         <MdSchool className="icon-btn" />
       </a>
@@ -61,9 +62,10 @@ const FloatingButtons = () => {
 
       {/* Email Form Button */}
       <a
+      href="#"
         onClick={toggleForm}
         className="email-button"
-        data-title="Get a Quote"
+        data-title="Enquiry"
       >
         <FaEnvelope className="icon-btn" />
       </a>
