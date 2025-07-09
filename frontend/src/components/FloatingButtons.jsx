@@ -37,7 +37,7 @@ const FloatingButtons = () => {
     <div className="floating-buttons">
       {/* Register Button */}
       <a
-       href="#"
+        href="#"
         className="register-button"
         onClick={toggleRegistrationForm}
         data-title="Insert details"
@@ -62,7 +62,7 @@ const FloatingButtons = () => {
 
       {/* Email Form Button */}
       <a
-      href="#"
+        href="#"
         onClick={toggleForm}
         className="email-button"
         data-title="Enquiry"
