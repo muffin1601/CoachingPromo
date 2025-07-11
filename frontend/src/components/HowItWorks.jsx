@@ -6,22 +6,22 @@ import { useInView } from "react-intersection-observer";
 
 const steps = [
   {
-    icon: <FaBoxOpen className="icon-obj" />,
+    icon: "/assets/icons/2 (2).png",
     title: "Choose a Product",
     desc: "Browse our wide range of promotional items."
   },
   {
-    icon: <FaPaintBrush className="icon-obj" />,
+    icon: "/assets/icons/2 (1).png",
     title: "Customize",
     desc: "Add your branding, logo, or message."
   },
   {
-    icon: <FaCheckCircle className="icon-obj" />,
+    icon: "/assets/icons/2 (4).png",
     title: "Approve Design",
     desc: "Review and confirm the final look before production."
   },
   {
-    icon: <FaTruck className="icon-obj" />,
+    icon: "/assets/icons/2 (3).png",
     title: "Get Delivered",
     desc: "Receive your customized products at your doorstep."
   }
@@ -54,7 +54,7 @@ const HowItWorks = () => {
                 transition={{ duration: 1.2, ease: "easeOut" }}
                 className="animated-section"
               >
-                {step.icon}
+               <img src= {step.icon} className="icon-obj" />
                 <h4>{step.title}</h4>
                 <p>{step.desc}</p>
               </motion.div>

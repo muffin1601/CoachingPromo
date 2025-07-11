@@ -170,7 +170,7 @@
   font-weight: 600;
   color: #302e2e;
   background-color: #f7f5f4;
-  border: 2px solid #f74b17;
+  border: 2px solid rgb(248, 57, 57);
   border-radius: 15px;
   cursor: pointer;
   transition: transform 0.2s ease, background-color 0.3s ease, box-shadow 0.3s ease;
@@ -179,7 +179,7 @@
 
 .customize-btn-1:hover {
   color: white;
-  background-color: #f74b17;
+  background-color: rgb(248, 57, 57);
   transform: translateY(-2px);
   box-shadow: 0 6px 14px rgba(208, 63, 20, 0.35);
 }

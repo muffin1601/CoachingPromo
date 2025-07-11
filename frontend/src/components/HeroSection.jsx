@@ -49,6 +49,7 @@ const HeroSection = ({ offerBannerRef }) => {
 
             {slide.type === "image" ? (
               <img
+                className="slide-image"
                 src={slide.src}
                 alt={`Slide ${index}`}
                 style={{ width: "100%", height: "100%", objectFit: "cover" }}

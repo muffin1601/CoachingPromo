@@ -52,7 +52,7 @@
 }
 .subproduct-card {
     display: flex;
-    width: 500px; /* Adjust as needed */
+    width: 30%; /* Adjust as needed */
     height: auto;
     background: rgb(255, 255, 255);
     padding: 20px;
