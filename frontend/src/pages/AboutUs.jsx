@@ -3,11 +3,19 @@ import React from 'react';
 import '../styles/AboutUs.css';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
+import SearchOverlay from "../components/SearchOverlay";
 
 const AboutUs = () => {
+const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [showSearch, setShowSearch] = useState(false);
+  const toggleSearch = () => setShowSearch(!showSearch);
+
   return (
     <>
-      <Navbar />
+      <Navbar toggleSidebar={() => setSidebarOpen(!sidebarOpen)} sidebarOpen={sidebarOpen} toggleSearch={toggleSearch} />
+          {showSearch && (
+            <SearchOverlay showSearch={showSearch} toggleSearch={toggleSearch} />
+          )}
       <section className="about-us">
         <div className="about-container">
           <h2 className="about-title">About Us</h2>

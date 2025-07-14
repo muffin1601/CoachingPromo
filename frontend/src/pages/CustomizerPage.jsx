@@ -14,6 +14,7 @@ import Footer from "../components/Footer";
 import VerticalToolbar from "../components/customizaton/VerticalToolbar";
 import PreviewModal from "../components/customizaton/PreviewModal";
 import "../styles/CustomizerPage.css";
+import SearchOverlay from "../components/SearchOverlay";
 
 const svgMap = {
   polotshirt: [
@@ -106,6 +107,9 @@ const CustomizerPage = () => {
   ]);
 
   const { productType } = useParams();
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [showSearch, setShowSearch] = useState(false);
+  const toggleSearch = () => setShowSearch(!showSearch);
   const selectedSVGs = svgMap[productType] || svgMap.polotshirt;
   const colorLabels = labelMap[productType] || labelMap.polotshirt;
   const partMap = partMapSet[productType] || partMapSet.polotshirt;
@@ -297,7 +301,10 @@ const CustomizerPage = () => {
 
   return (
     <>
-      <Navbar />
+      <Navbar toggleSidebar={() => setSidebarOpen(!sidebarOpen)} sidebarOpen={sidebarOpen} toggleSearch={toggleSearch} />
+          {showSearch && (
+            <SearchOverlay showSearch={showSearch} toggleSearch={toggleSearch} />
+          )}
       <div className="customizer-page">
         <h2 className="customizer-title">Create your own design</h2>
 

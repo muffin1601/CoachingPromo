@@ -83,7 +83,9 @@ const Navbar = ({ toggleSearch }) => {
                 </div>
               </li>
             ))}
+            <li><a href="/blogs">Blog</a></li>
             <li><a href="/about">About Us</a></li>
+            
           </ul>
 
           {/* Desktop Icons */}

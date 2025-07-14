@@ -1,0 +1,81 @@
+.results-page {
+  padding: 60px 20px;
+  background: #f7f9fb;
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.search-heading {
+  font-size: 2rem;
+  color: #0d47a1;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.results-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.result-card {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  width: 280px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.result-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0px 10px 24px rgba(0, 0, 0, 0.15);
+}
+
+.result-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.result-details {
+  padding: 20px;
+  text-align: center;
+}
+
+.result-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.result-content {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.view-button-2 {
+  background: #6c4dff;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.view-button-2:hover {
+  background: #5535e6;
+}
+
+.no-results {
+  font-size: 1.2rem;
+  color: #999;
+  text-align: center;
+  width: 100%;
+  margin-top: 40px;
+}

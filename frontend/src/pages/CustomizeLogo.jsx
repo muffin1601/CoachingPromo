@@ -11,6 +11,7 @@ import ExportButtons from '../components/customizaton/ExportButtons';
 import ProductCustomizer from '../components/customizaton/ProductCustomizer';
 import PreviewModalpng from '../components/customizaton/PreviewModalpng';
 import Footer from '../components/Footer';
+import SearchOverlay from "../components/SearchOverlay";
 
 const CustomizeLogo = () => {
   const canvasRef = useRef(null);
@@ -20,7 +21,10 @@ const CustomizeLogo = () => {
     React.createRef(),
     React.createRef(),
   ]);
-
+  
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [showSearch, setShowSearch] = useState(false);
+  const toggleSearch = () => setShowSearch(!showSearch);
   const [viewStates, setViewStates] = useState([null, null, null, null]);
   const [activeIndex, setActiveIndex] = useState(0);
   const [activeTool, setActiveTool] = useState("export");
@@ -146,7 +150,10 @@ const CustomizeLogo = () => {
 
   return (
     <>
-      <Navbar />
+      <Navbar toggleSidebar={() => setSidebarOpen(!sidebarOpen)} sidebarOpen={sidebarOpen} toggleSearch={toggleSearch} />
+          {showSearch && (
+            <SearchOverlay showSearch={showSearch} toggleSearch={toggleSearch} />
+          )}
       <div className="customizer-page">
         <h2 className="customizer-title">Customize your product</h2>
 

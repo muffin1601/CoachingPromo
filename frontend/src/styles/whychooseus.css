@@ -78,73 +78,70 @@
     color: #555;
 }
 
-/* Tablets & Medium Screens */
-@media screen and (max-width: 1024px) {
-    .benefits {
-        gap: 15px;
-    }
+/* Tablet (768px and below) */
+@media (max-width: 768px) {
+  .benefits-full {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .benefit {
-        width: 260px;
-        height: auto;
-        padding: 18px;
-    }
+  .photo {
+    display: none;
+    width: 100%;
+    margin-bottom: 20px;
+  }
 
-    .benefit h4 {
-        font-size: 1.2rem;
-    }
+  .benefits-1,
+  .benefits-2 {
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+  }
 
-    .benefit p {
-        font-size: 0.95rem;
-    }
+  .benefit {
+    width: 45%; /* Two per row */
+  }
+
+  .why-choose-us h2 {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+  }
 }
 
-/* Mobile Screens */
-@media screen and (max-width: 768px) {
-    .benefits {
-        flex-direction: column;
-        align-items: center;
-    }
+/* Mobile (480px and below) */
+@media (max-width: 480px) {
+  .benefits-1,
+  .benefits-2 {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .benefit {
-        width: 80%;
-        max-width: 350px;
-        padding: 20px;
-    }
+  .benefit {
+    width: 80%;
+    margin-bottom: 20px;
+  }
 
-    .why-choose-us h2 {
-        font-size: 1.8rem;
-    }
+  .why-choose-us h2 {
+    font-size: 1.5rem;
+  }
 
-    .subtitle {
-        font-size: 1rem;
-    }
-}
+  .subtitle {
+    font-size: 1rem;
+  }
 
-/* Small Phones */
-@media screen and (max-width: 480px) {
-    .why-choose-us {
-        padding: 20px 10px;
-    }
+  .icon-check {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
 
-    .benefit {
-        width: 90%;
-        padding: 15px;
-    }
+  .benefit h4 {
+    font-size: 1.1rem;
+  }
 
-    .why-choose-us h2 {
-        font-size: 1.5rem;
-    }
-
-    .subtitle {
-        font-size: 0.9rem;
-    }
-
-    .benefit h4 {
-        font-size: 1.1rem;
-    }
-
-    .benefit p {
-        font-size: 0.9rem;
-    }
+  .benefit p {
+    font-size: 0.95rem;
+  }
 }

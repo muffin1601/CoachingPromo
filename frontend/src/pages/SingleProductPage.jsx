@@ -109,12 +109,11 @@ const SingleProductPage = () => {
                   const routeMap = {
                     "Polo T-Shirts": "/customize/polotshirt",
                     "Round Neck T-Shirts": "/customize/roundneck",
-                    "Institute Backpack": "/customize/backpack",
                   };
                   const ProductList = [
                     "Hoodies-Jackets", "Nehru Jacket", "Teacher Jacket",
                     "Formal Shirts",
-                    "Corporate Shirts",
+                    "Corporate Shirts","Institute Backpack"
                   ];
 
                   const customizeRoute = routeMap[productName];
