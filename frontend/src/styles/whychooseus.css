@@ -1,22 +1,25 @@
 .why-choose-us {
     
     background: linear-gradient(135deg, #0d47a1, #42a5f5);
+    /* background: linear-gradient(135deg, rgba(252, 217, 214, 0.2), rgba(238, 220, 192, 0.3)); */
+/* background: linear-gradient(135deg, rgba(235, 214, 212, 0.2), rgba(238, 224, 203, 0.3)); */
     
     padding: 40px 20px 30px;
     text-align: center;
 }
 
 .why-choose-us h2 {
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: 600;
     margin: 10px 0 20px;
     color: #ffffff;
 }
 
 .subtitle {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     color: #f0f0f0;
     margin-bottom: 30px;
+    padding: 0px 20%;
 }
 
 .benefits-full {
@@ -24,8 +27,7 @@
     flex-direction: row;
  gap: 0px;
  width: 100%;
-    
-    
+   
 }
 
 .photo {

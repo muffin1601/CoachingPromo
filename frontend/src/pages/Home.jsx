@@ -9,6 +9,8 @@ import Footer from "../components/Footer";
 import OfferBanner from "../components/OfferBanner";
 import SearchOverlay from "../components/SearchOverlay";
 import Advertisement from "../components/Advertisement";
+import QualitySection from "../components/QualitySection";
+import SeoFooterText from "../components/SeoFooterText";
 
 const Home = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -25,7 +27,7 @@ const Home = () => {
         <HeroSection offerBannerRef={offerBannerRef} />
         <div className="block-middle">
         <ProductSlider  />
-        <Advertisement />
+        {/* <Advertisement /> */}
         </div>
         <div ref={offerBannerRef}>
           <OfferBanner />
@@ -33,6 +35,8 @@ const Home = () => {
         <WhyChooseUs />
         <HowItWorks />
         <ContactForm  />
+        <QualitySection />
+        <SeoFooterText />
         <Footer />
     </div>
   )

@@ -22,6 +22,8 @@ const ProductPage = () => {
   const [showSearch, setShowSearch] = useState(false);
   const toggleSearch = () => setShowSearch(!showSearch);
   const [relatedSubcategories, setRelatedSubcategories] = useState([]);
+  const [subcategoryMeta, setSubcategoryMeta] = useState({});
+
 
 useEffect(() => {
   if (category) {
@@ -37,19 +39,21 @@ useEffect(() => {
 }, [category]);
 
 
-    useEffect(() => {
-      if (category && productName) {
-        axios
-          .get(`${import.meta.env.VITE_API_URL}/${category}/${productName}`)
-          .then((res) => {
-            console.log("Fetched from backend:", res.data);
-            setFilteredSubproducts(res.data);
-          })
-          .catch((err) => {
-            console.error("Error fetching products:", err);
-          });
-      }
-    }, [category, productName]);
+  useEffect(() => {
+    if (category && productName) {
+      axios
+        .get(`${import.meta.env.VITE_API_URL}/${category}/${productName}`)
+        .then((res) => {
+          console.log("Fetched from backend:", res.data);
+          setSubcategoryMeta(res.data.subcategory || {});
+          setFilteredSubproducts(res.data.products || []);
+        })
+        .catch((err) => {
+          console.error("Error fetching products:", err);
+        });
+    }
+  }, [category, productName]);
+
   
   return (
     <div>
@@ -58,6 +62,8 @@ useEffect(() => {
           <SearchOverlay showSearch={showSearch} toggleSearch={toggleSearch} />
         )}
       <h2 className="product-heading">{productName ? decodeURIComponent(productName) : "Product Name"}</h2>
+      <h3 className="product-subheading-2">{subcategoryMeta.sec_head}</h3>
+      <h4 className="product-subheading-3">{subcategoryMeta.third_head}</h4>
       <div className="subproduct-container">
         {/* Check if there are subproducts */}
         {filteredSubproducts.length > 0 ? (
@@ -85,6 +91,11 @@ useEffect(() => {
         ) : (
           <p>No subproducts available.</p>
         )}
+      </div>
+      <div className="container-2">
+        <h2 className="foot-head">{subcategoryMeta.foot_head}</h2>
+        <h3 className="foot-subhead">{subcategoryMeta.foot_subhead}</h3>
+        <p className="foot-content">{subcategoryMeta.foot_content}</p>
       </div>
       {relatedSubcategories.length > 0 && (
         <>

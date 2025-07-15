@@ -20,6 +20,7 @@ html, body {
 /* Each child takes roughly half width, but adjusts on smaller screens */
 .block-middle > * {
   flex: 1 1 48%; /* grow, shrink, basis ~48% width */
+  width: 100%;
   min-width: 320px; /* prevent too small on very narrow screens */
   box-sizing: border-box;
 }

@@ -2,7 +2,7 @@ const slides = [
     {
       id: 1,
       type: "video",
-      title: "Boost Your Coaching Brand with Smart Marketing!",
+      title: "Premium Corporate Promotional Products for Coaching Institutes – Custom T-Shirts, Bags, Bottles, and More!",
       subtitle: "Boost your coaching institute with high-quality promotional products.",
       src: "/assets/offerbanner.mp4", // Video file
     },

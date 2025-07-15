@@ -15,6 +15,11 @@ const subcategorySchema = new mongoose.Schema({
   image: { type: String },
   price: { type: Number},
   products: [productSchema],
+  sec_head: String,
+  third_head: String,
+  foot_head: String,
+  foot_subhead: String,
+  foot_content: String,
 });
 
 const categorySchema = new mongoose.Schema({

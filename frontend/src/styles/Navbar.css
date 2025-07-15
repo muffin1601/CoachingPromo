@@ -11,6 +11,8 @@ body {
 .top-banner {
   background: linear-gradient(135deg, #1976d2);
   color: #fff;
+  /* background: rgb(255, 243, 243);
+  color: rgb(63, 63, 63); */
   text-align: center;
   padding: 10px;
   font-size: 16px;

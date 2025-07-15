@@ -1,5 +1,5 @@
 // AboutUs.jsx
-import React from 'react';
+import React , {useState} from 'react';
 import '../styles/AboutUs.css';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';

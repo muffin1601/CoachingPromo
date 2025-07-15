@@ -14,7 +14,8 @@ const ProductSlider = () => {
 
   return (
     <div className="product-sliders">
-      <h5>Our Collections</h5>
+      <h5>Explore Our Best-Selling Products</h5>
+      <h6 className="subtitle-cat">Branded Merchandise Tailored for Coaching Institutes – Boost Your Brand with Style & Utility</h6>
       {categories.map((category) => (
         <CategorySlider key={category._id} category={category} />
       ))}

@@ -29,9 +29,9 @@ const WhyChooseUs = () => {
 
   return (
     <section className="why-choose-us">
-      <h2 className="heading">Why Choose Us?</h2>
+      <h2 className="heading">Why Coaching Institutes Choose Us?</h2>
       <p className="subtitle">
-        We provide high-quality promotional products tailored to your coaching institute’s needs.
+        At CoachingPromo, we provide high quality corporate promotional products specifically designed for coaching institutes. Our range ensures premium materials and superior printing, delivering both durability and visual impact.
       </p>
       <div className="benefits-full">
       <div className="benefits-1">

@@ -187,8 +187,20 @@ router.get("/:category/:productName", async (req, res) => {
       (sub) => sub.name.toLowerCase() === decodeURIComponent(productName).toLowerCase()
     );
     if (!subcat) return res.status(404).json({ error: "Subcategory not found" });
+    res.json({
+      subcategory: {
+        name: subcat.name,
+        image: subcat.image,
+        price: subcat.price,
+        sec_head: subcat.sec_head,
+        third_head: subcat.third_head,
+        foot_head: subcat.foot_head,
+        foot_subhead: subcat.foot_subhead,
+        foot_content: subcat.foot_content,
+      },
+      products: subcat.products || [],
+    });
 
-    res.json(subcat.products || []);
   } catch (error) {
     res.status(500).json({ error: "Internal Server Error" });
   }
