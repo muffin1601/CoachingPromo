@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import "../styles/productpage.css";
 // import subproductsData from "../data/products";
 import Navbar from "../components/Navbar";
-import { FaBrush, FaEye } from "react-icons/fa";
+import { FaBrush, FaEye , FaWhatsapp, FaGlobe } from "react-icons/fa";
 import Footer from "../components/Footer";
 import axios from "axios";
 import SearchOverlay from "../components/SearchOverlay";
@@ -18,9 +18,8 @@ const ProductPage = () => {
   const { category, productName } = useParams();
   console.log(productName); // Get product name from URL
   const [filteredSubproducts, setFilteredSubproducts] = useState([]);
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [showSearch, setShowSearch] = useState(false);
-  const toggleSearch = () => setShowSearch(!showSearch);
+
+  
   const [relatedSubcategories, setRelatedSubcategories] = useState([]);
   const [subcategoryMeta, setSubcategoryMeta] = useState({});
 
@@ -57,10 +56,7 @@ useEffect(() => {
   
   return (
     <div>
-      <Navbar toggleSidebar={() => setSidebarOpen(!sidebarOpen)} sidebarOpen={sidebarOpen} toggleSearch={toggleSearch} />
-        {showSearch && (
-          <SearchOverlay showSearch={showSearch} toggleSearch={toggleSearch} />
-        )}
+      
       <h2 className="product-heading">{productName ? decodeURIComponent(productName) : "Product Name"}</h2>
       <h3 className="product-subheading-2">{subcategoryMeta.sec_head}</h3>
       <h4 className="product-subheading-3">{subcategoryMeta.third_head}</h4>
@@ -96,6 +92,13 @@ useEffect(() => {
         <h2 className="foot-head">{subcategoryMeta.foot_head}</h2>
         <h3 className="foot-subhead">{subcategoryMeta.foot_subhead}</h3>
         <p className="foot-content">{subcategoryMeta.foot_content}</p>
+      </div>
+      <div className="cta-section">
+        <h2 className="cta-heading">📦 Bulk Orders | 🖨️ Custom Designs & Logo Engraving | 🚚 Fast Pan-India Delivery</h2>
+        <p className="cta-contact">
+          <FaWhatsapp className="icn"/> <a href="https://wa.me/+919266013059" target="_blank" rel="noopener noreferrer">+91 9266 013059</a> &nbsp;|&nbsp; <FaGlobe className="icn-2"/>
+          <a href="https://www.coachingpromo.in" target="_blank" rel="noopener noreferrer"> www.CoachingPromo.in</a>
+        </p>
       </div>
       {relatedSubcategories.length > 0 && (
         <>
@@ -140,7 +143,6 @@ useEffect(() => {
           </Swiper>
         </>
       )}
-      <Footer />
     </div>
   );
 };

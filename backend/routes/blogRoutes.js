@@ -1,9 +1,10 @@
 const express = require('express');
+const mongoose = require('mongoose');
 const router = express.Router();
 const Blog = require('../models/blog');
 const Comment = require('../models/Comment');
 
-router.get('/blogs', async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         const blogs = await Blog.find().sort({ createdAt: -1});
         res.json(blogs);
@@ -12,10 +13,10 @@ router.get('/blogs', async (req, res) => {
     }
 });
 
-router.get('/blogs/:id', async (req, res) => {
+router.get('/:id', async (req, res) => {
   const { id } = req.params;
 
-  console.log("Requested blog ID:", id); // Log this
+  
 
   if (!mongoose.Types.ObjectId.isValid(id)) {
     return res.status(400).json({ error: "Invalid blog ID format" });
@@ -45,9 +46,9 @@ router.post('/post-blogs', async(req, res) => {
     }
 });
 
-router.get('/blogs/:blogId', async (req, res) => {
+router.get('/comments/:blogId', async (req, res) => {
     try {
-        const comments = await Comment.find({ blogId: req.params.blogId}).sort({ createfdAt: -1 });
+        const comments = await Comment.find({ blogId: req.params.blogId}).sort({ createdAt: -1 });
         res.json(comments);
     } catch (err) {
         res.status(500).json({ error: err.message });

@@ -8,7 +8,7 @@ const CommentSection = ({ blogId }) => {
   const [user, setUser] = useState('');
 
   const fetchComments = () => {
-    axios.get(`/api/comments/${blogId}`).then((res) => setComments(res.data));
+    axios.get(`${import.meta.env.VITE_API_URL}/blogs/comments/${blogId}`).then((res) => setComments(res.data));
   };
 
   useEffect(() => {
@@ -18,7 +18,7 @@ const CommentSection = ({ blogId }) => {
   const handleComment = async (e) => {
     e.preventDefault();
     if (!text) return;
-    await axios.post(`${import.meta.env.VITE_API_URL}/comments`, { blogId, text, user });
+    await axios.post(`${import.meta.env.VITE_API_URL}/blogs/comments`, { blogId, text, user });
     setText('');
     setUser('');
     fetchComments();

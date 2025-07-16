@@ -63,12 +63,6 @@ const categories = [
         products: [
           { name: "Jute Bag" }
         ]
-      },
-      {
-        name: "Other Bags",
-        products: [
-          { name: "Miscellaneous" }
-        ]
       }
     ]
   },
@@ -129,6 +123,7 @@ const categories = [
           { name: "Trophy" },
           { name: "Wooden Trophy" }, 
           { name: "Badges" },
+          { name: "Medals"},
           { name: "Other Awards" }
         ]
       }

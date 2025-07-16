@@ -2,17 +2,12 @@ import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
 import "../styles/searchresults.css"; // Your shared CSS file with subproduct styles
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import SearchOverlay from "../components/SearchOverlay";
+
 
 const SearchResults = () => {
   const [results, setResults] = useState([]);
   const [hasSearched, setHasSearched] = useState(false);
   const location = useLocation();
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [showSearch, setShowSearch] = useState(false);
-  const toggleSearch = () => setShowSearch(!showSearch);
 
   const query = new URLSearchParams(location.search).get("q");
 
@@ -33,10 +28,7 @@ const SearchResults = () => {
 
   return (
     <>
-      <Navbar toggleSidebar={() => setSidebarOpen(!sidebarOpen)} sidebarOpen={sidebarOpen} toggleSearch={toggleSearch} />
-          {showSearch && (
-            <SearchOverlay showSearch={showSearch} toggleSearch={toggleSearch} />
-          )}
+      
       <div className="results-page">
         <h2 className="product-heading">Search Results for "{query}"</h2>
         <div className="subproduct-container">
@@ -64,7 +56,7 @@ const SearchResults = () => {
           )}
         </div>
       </div>
-      <Footer />
+      
     </>
   );
 };

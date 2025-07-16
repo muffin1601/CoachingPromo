@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import { FaShoppingCart, FaCogs, FaEye } from "react-icons/fa";
 import "../styles/SingleProductPage.css";
 import axios from "axios";
@@ -17,12 +15,11 @@ const SingleProductPage = () => {
   const [product, setProduct] = useState(null);
   const [mainImage, setMainImage] = useState("");
   const [quantity, setQuantity] = useState(50);
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [showSearch, setShowSearch] = useState(false);
+  
   const [relatedProducts, setRelatedProducts] = useState([]);
   const navigate = useNavigate();
 
-  const toggleSearch = () => setShowSearch(!showSearch);
+ 
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -50,15 +47,7 @@ const SingleProductPage = () => {
 
   return (
     <div>
-      <Navbar
-        toggleSidebar={() => setSidebarOpen(!sidebarOpen)}
-        sidebarOpen={sidebarOpen}
-        toggleSearch={toggleSearch}
-      />
-      {showSearch && (
-        <SearchOverlay showSearch={showSearch} toggleSearch={toggleSearch} />
-      )}
-
+      
       {!product ? (
         <p className="error-message-1">Loading product...</p>
       ) : (
@@ -200,7 +189,7 @@ const SingleProductPage = () => {
         </>
       )}
 
-      <Footer />
+      
     </div>
   );
 };

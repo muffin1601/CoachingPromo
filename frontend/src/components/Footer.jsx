@@ -77,7 +77,7 @@ const Footer = () => {
             Email: <a href="mailto:contact@coachingpromo.in">contact@coachingpromo.in</a>
           </p>
           <p className="footer-text">
-            Phone: <a href="tel:+918750708222">+91 87507 08222</a>
+            Phone: <a href="tel:+919266013059">+91 9266 013059</a>
           </p>
         </div>
 

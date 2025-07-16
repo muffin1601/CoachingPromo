@@ -43,6 +43,7 @@ const instituteRoutes = require("./routes/instituteRoutes");
 const blogRoutes = require("./routes/blogRoutes")
 
 // --- Register Routes ---
+app.use("/api/blogs", blogRoutes);
 app.use("/api", categoryRoutes);
 app.use("/api", subcategoryRoutes);
 app.use("/api", productRoutes);
@@ -51,7 +52,7 @@ app.use("/api", adminRoutes);
 app.use("/api", bannerRoutes);
 app.use("/api", searchRoutes);
 app.use("/api", instituteRoutes);
-app.use("/api", blogRoutes);
+
 
 // --- Serve Frontend ---
 app.use(express.static(path.join(__dirname, '../frontend/dist')));
