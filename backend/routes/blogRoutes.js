@@ -12,13 +12,26 @@ router.get('/blogs', async (req, res) => {
     }
 });
 
-router.get('/blogs/:id', async (req,res) => {
-    try {
-       const blog = await Blog.findById(req.params.id);
-       res.json(blog);
-    } catch (err) {
-        res.status(404).json({error: "Blog not found "});
+router.get('/blogs/:id', async (req, res) => {
+  const { id } = req.params;
+
+  console.log("Requested blog ID:", id); // Log this
+
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(400).json({ error: "Invalid blog ID format" });
+  }
+
+  try {
+    const blog = await Blog.findById(id);
+    if (!blog) {
+      return res.status(404).json({ error: "Blog not found" });
     }
+
+    res.json(blog);
+  } catch (error) {
+    console.error("Error fetching blog:", error);
+    res.status(500).json({ error: "Server error", details: error.message });
+  }
 });
 
 router.post('/post-blogs', async(req, res) => {

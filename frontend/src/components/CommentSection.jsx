@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import "../styles/Blog.css"; // or create a separate CommentSection.css if you prefer
 
 const CommentSection = ({ blogId }) => {
   const [comments, setComments] = useState([]);
@@ -24,10 +25,11 @@ const CommentSection = ({ blogId }) => {
   };
 
   return (
-    <div>
-      <h3>Comments</h3>
-      <form onSubmit={handleComment}>
+    <div className="comment-section">
+      <h3 className="comment-title">Comments</h3>
+      <form className="comment-form" onSubmit={handleComment}>
         <input
+          className="comment-input"
           type="text"
           placeholder="Your Name"
           value={user}
@@ -35,17 +37,18 @@ const CommentSection = ({ blogId }) => {
           required
         />
         <textarea
+          className="comment-textarea"
           placeholder="Write a comment..."
           value={text}
           onChange={(e) => setText(e.target.value)}
           required
         />
-        <button type="submit">Post Comment</button>
+        <button className="comment-button" type="submit">Post Comment</button>
       </form>
-      <ul>
+      <ul className="comment-list">
         {comments.map((c) => (
-          <li key={c._id}>
-            <strong>{c.user}</strong>: {c.text}
+          <li className="comment-item" key={c._id}>
+            <strong className="comment-user">{c.user}</strong>: <span className="comment-text">{c.text}</span>
           </li>
         ))}
       </ul>

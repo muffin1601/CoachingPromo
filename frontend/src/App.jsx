@@ -16,13 +16,22 @@ import RouteProtector from "./components/RouteProtector";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import SearchResults from "./pages/SearchResults";
+import Navbar from "./components/Navbar"
+import Footer from "./components/Footer";
+import SearchOverlay from "./components/SearchOverlay";
 
 const App = () => {
+      const [sidebarOpen, setSidebarOpen] = useState(false);
+      const [showSearch, setShowSearch] = useState(false);
+      const toggleSearch = () => setShowSearch(!showSearch);
  
   return (
     
     <div className="landing-page">
-      {/* <Navbar toggleSidebar={() => setSidebarOpen(!sidebarOpen)} sidebarOpen={sidebarOpen} scrolltoApparel={scrolltoApparel} scrolltoBags={scrolltoBags} scrolltoStationary={scrolltoStationary} scrolltoTrophy={scrolltoTrophy} scrolltoPromotionalkits={scrolltoPromotionalkits} /> */}
+        <Navbar toggleSidebar={() => setSidebarOpen(!sidebarOpen)} sidebarOpen={sidebarOpen} toggleSearch={toggleSearch} />
+          {showSearch && (
+            <SearchOverlay showSearch={showSearch} toggleSearch={toggleSearch} />
+          )}
       <Router>
         <Routes>
           <Route path="/" element={<Home />} /> {/* Home Page */}
@@ -55,6 +64,7 @@ const App = () => {
         className="custom-toast-container"
         toastClassName="custom-toast"
       />
+      <Footer />
     </div>
   );
 };

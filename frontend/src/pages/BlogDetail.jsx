@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import CommentSection from '../components/CommentSection';
+import "../styles/Blog.css";
 
 const BlogDetail = () => {
   const { id } = useParams();
@@ -11,17 +12,19 @@ const BlogDetail = () => {
     axios.get(`${import.meta.env.VITE_API_URL}/blogs/${id}`).then((res) => setBlog(res.data));
   }, [id]);
 
-  if (!blog) return <p>Loading...</p>;
+  if (!blog) return <p className="blog-loading">Loading...</p>;
 
   return (
-    <div>
-      <h2>{blog.title}</h2>
+    <div className="blog-detail-container">
+      <h2 className="blog-detail-title">{blog.title}</h2>
       {blog.media && (
-        blog.media.includes('mp4') ?
-        <video width="500" controls src={blog.media} /> :
-        <img src={blog.media} alt={blog.title} width="500" />
+        blog.media.includes('mp4') ? (
+          <video className="blog-detail-media" width="100%" controls src={blog.media} />
+        ) : (
+          <img className="blog-detail-media" src={blog.media} alt={blog.title} width="100%" />
+        )
       )}
-      <p>{blog.content}</p>
+      <p className="blog-detail-content">{blog.content}</p>
       <CommentSection blogId={id} />
     </div>
   );
