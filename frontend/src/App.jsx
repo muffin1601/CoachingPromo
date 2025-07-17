@@ -21,21 +21,20 @@ import Footer from "./components/Footer";
 import SearchOverlay from "./components/SearchOverlay";
 
 const App = () => {
-      const [sidebarOpen, setSidebarOpen] = useState(false);
-      const [showSearch, setShowSearch] = useState(false);
-      const toggleSearch = () => setShowSearch(!showSearch);
- 
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [showSearch, setShowSearch] = useState(false);
+  const toggleSearch = () => setShowSearch(!showSearch);
+
   return (
-    
-    <div className="landing-page">
+    <Router> {/* 👈 wrap everything in Router */}
+      <div className="landing-page">
         <Navbar toggleSidebar={() => setSidebarOpen(!sidebarOpen)} sidebarOpen={sidebarOpen} toggleSearch={toggleSearch} />
-          {showSearch && (
-            <SearchOverlay showSearch={showSearch} toggleSearch={toggleSearch} />
-          )}
-      <Router>
+        {showSearch && (
+          <SearchOverlay showSearch={showSearch} toggleSearch={toggleSearch} />
+        )}
         <Routes>
-          <Route path="/" element={<Home />} /> {/* Home Page */}
-          <Route path="/home" element={<Home />} /> {/* Home Page */}
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/blogs" element={<BlogList />} />
           <Route path="/blogs/new" element={<BlogForm />} />
@@ -43,30 +42,31 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/admin" element={<RouteProtector><AdminDashboard /></RouteProtector>} />
           <Route path="/:category/:productName" element={<ProductPage />} />
-          <Route path="/:category/:productName/:subproduct" element={<SingleProductPage/>} />
-          <Route path="/customize/:productType" element={<CustomizerPage/>} />
-          <Route path="/:category/:productName/:subproduct/customize" element={<CustomizeLogo/>} />
+          <Route path="/:category/:productName/:subproduct" element={<SingleProductPage />} />
+          <Route path="/customize/:productType" element={<CustomizerPage />} />
+          <Route path="/:category/:productName/:subproduct/customize" element={<CustomizeLogo />} />
           <Route path="/search-results" element={<SearchResults />} />
         </Routes>
-      </Router>
-      <FloatingButtons/>
-      <ToastContainer
-        position="top-right"
-        autoClose={3000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="colored"
-        className="custom-toast-container"
-        toastClassName="custom-toast"
-      />
-      <Footer />
-    </div>
+        <FloatingButtons />
+        <ToastContainer
+          position="top-right"
+          autoClose={3000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="colored"
+          className="custom-toast-container"
+          toastClassName="custom-toast"
+        />
+        <Footer />
+      </div>
+    </Router>
   );
 };
+
 
 export default App;
