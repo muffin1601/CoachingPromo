@@ -2,8 +2,8 @@ const mongoose = require("mongoose");
 
 const slideSchema = new mongoose.Schema({
   id: { type: Number, required: true, unique: true },
-  type: { type: String, enum: ["video", "image"], required: true },
-  title: { type: String, required: true },
+  type: { type: String, enum: ["video", "image"] },
+  title: { type: String },
   subtitle: { type: String },
   src: { type: String, required: true }, // Path to video or image
 });

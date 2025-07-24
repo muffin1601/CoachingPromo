@@ -33,7 +33,7 @@ const SingleProductPage = () => {
         const relatedRes = await axios.get(
           `${import.meta.env.VITE_API_URL}/${category}/${productName}`
         );
-        const filtered = relatedRes.data.filter((p) => p._id !== res.data._id);
+        const filtered = (relatedRes.data.products || []).filter((p) => p._id !== res.data._id);
         setRelatedProducts(filtered);
       } catch (error) {
         console.error("Error fetching product or related products:", error);
