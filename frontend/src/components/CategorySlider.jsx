@@ -1,6 +1,6 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules"; // ✅ import Autoplay
+import { Navigation, Pagination, Autoplay } from "swiper/modules"; 
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { FaHeart } from "react-icons/fa";
@@ -11,6 +11,9 @@ import "../styles/ProductSlider.css";
 
 const CategorySlider = ({ category }) => {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
+
+  const slugify = (text) =>
+  text.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9\-]/g, "");
 
   return (
     <motion.div
@@ -25,13 +28,13 @@ const CategorySlider = ({ category }) => {
       <section className="product-slider">
         <Swiper
           className="swiper"
-          modules={[Navigation, Pagination, Autoplay]} // ✅ Add Autoplay
+          modules={[Navigation, Pagination, Autoplay]} 
           spaceBetween={10}
           navigation
           pagination={{ clickable: true }}
           autoplay={{
-            delay: 3000, // ✅ time in ms between slides
-            disableOnInteraction: false, // keeps autoplay even after user interaction
+            delay: 3000, 
+            disableOnInteraction: false, 
           }}
           breakpoints={{
             320: { slidesPerView: 2 },
@@ -49,9 +52,7 @@ const CategorySlider = ({ category }) => {
                       <button
                         className="cta-button"
                         onClick={() =>
-                          window.location.href = `/${encodeURIComponent(
-                            category.name
-                          )}/${encodeURIComponent(product.name)}`
+                          window.location.href = `/${slugify(category.name)}/${slugify(product.name)}`
                         }
                       >
                         View Products

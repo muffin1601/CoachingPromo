@@ -9,12 +9,11 @@ import TextControls from "../components/customizaton/TextControls";
 import ColorPalette from "../components/customizaton/ColorPalette";
 import NameNumberInput from "../components/customizaton/NameNumberInput";
 import ExportButtons from "../components/customizaton/ExportButtons";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+
 import VerticalToolbar from "../components/customizaton/VerticalToolbar";
 import PreviewModal from "../components/customizaton/PreviewModal";
 import "../styles/CustomizerPage.css";
-import SearchOverlay from "../components/SearchOverlay";
+
 
 const svgMap = {
   polotshirt: [

@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import "../styles/productpage.css";
 // import subproductsData from "../data/products";
 import Navbar from "../components/Navbar";
-import { FaBrush, FaEye , FaWhatsapp, FaGlobe } from "react-icons/fa";
+import { FaBrush, FaEye, FaWhatsapp, FaGlobe } from "react-icons/fa";
 import Footer from "../components/Footer";
 import axios from "axios";
 import SearchOverlay from "../components/SearchOverlay";
@@ -12,30 +12,51 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
+import { Helmet } from "react-helmet";
+import { metaByProductName } from "../data/metaData";
 
 
-const ProductPage = () => {  
-  const { category, productName } = useParams();
-  console.log(productName); // Get product name from URL
+const ProductPage = () => {
+  
+  console.log(productName);
   const [filteredSubproducts, setFilteredSubproducts] = useState([]);
 
-  
+
   const [relatedSubcategories, setRelatedSubcategories] = useState([]);
   const [subcategoryMeta, setSubcategoryMeta] = useState({});
 
+  const deslugify = (slug) => {
+  return slug
+    .replace(/-/g, " ") 
+    .replace(/\b\w/g, (char) => char.toUpperCase()); 
+};
 
-useEffect(() => {
-  if (category) {
-    axios
-      .get(`${import.meta.env.VITE_API_URL}/related-subcategories/${category}`)
-      .then((res) => {
-        setRelatedSubcategories(res.data);
-      })
-      .catch((err) => {
-        console.error("Error fetching subcategories:", err);
-      });
-  }
-}, [category]);
+const { category: rawCategory, productName: rawProductName } = useParams();
+
+const category = deslugify(rawCategory);
+const productName = deslugify(rawProductName);
+
+  const resolveProductName = (slug) =>
+    slug.replace(/-/g, " ").replace(/\b\w/g, (l) => l.toUpperCase());
+
+  const readableName = resolveProductName(productName);
+  const meta = metaByProductName[readableName] || {
+    title: "CoachingPromo – Custom Promotional Products",
+    description: "Explore premium promotional products for coaching institutes. T-Shirts, Bags, Stationery, and more. Bulk custom printing. PAN India shipping."
+  };
+
+  useEffect(() => {
+    if (category) {
+      axios
+        .get(`${import.meta.env.VITE_API_URL}/related-subcategories/${category}`)
+        .then((res) => {
+          setRelatedSubcategories(res.data);
+        })
+        .catch((err) => {
+          console.error("Error fetching subcategories:", err);
+        });
+    }
+  }, [category]);
 
 
   useEffect(() => {
@@ -53,97 +74,102 @@ useEffect(() => {
     }
   }, [category, productName]);
 
-  
-  return (
-    <div>
-      
-      <h2 className="product-heading">{productName ? decodeURIComponent(productName) : "Product Name"}</h2>
-      <h3 className="product-subheading-2">{subcategoryMeta.sec_head}</h3>
-      <h4 className="product-subheading-3">{subcategoryMeta.third_head}</h4>
-      <div className="subproduct-container">
-        {/* Check if there are subproducts */}
-        {filteredSubproducts.length > 0 ? (
-          filteredSubproducts.map((sub, index) => (
-            <div key={index} className="subproduct-card">
-              
-              {/* Image on Right */}
-              <img src={`${import.meta.env.VITE_IMAGE_API_URL}${sub.image}`} alt={sub.name} />
 
-              {/* Text on Left */}
-              <div className="subproduct-text">
-                <h3 className="subproduct-name">{sub.name}</h3>
-                <p className="subproduct-content">{sub.content}</p>
-                {/* <p className="subproduct-price">Price: ₹{parseFloat(sub.price.toString().replace("₹", "")).toFixed(2)}</p> */}
-                {/* <p className="subproduct-rating">Rating: <span>★★★★☆</span></p> */}
-                <div className="button-container">
-                <button className="view-button" onClick={() => window.location.href = `/${category}/${productName}/${encodeURIComponent(sub.name)}`} >   
-                  <FaEye/> View
-                </button>
-                {/* <button className="custom-btn1"><span className="custom-icon"><FaBrush/></span>Customize</button> */}
+  return (
+    <>
+      <Helmet>
+        <title>{meta.title}</title>
+        <meta name="description" content={meta.description} />
+      </Helmet>
+      <div>
+
+        <h2 className="product-heading">{productName ? decodeURIComponent(productName) : "Product Name"}</h2>
+        <h3 className="product-subheading-2">{subcategoryMeta.sec_head}</h3>
+        <h4 className="product-subheading-3">{subcategoryMeta.third_head}</h4>
+        <div className="subproduct-container">
+          {/* Check if there are subproducts */}
+          {filteredSubproducts.length > 0 ? (
+            filteredSubproducts.map((sub, index) => (
+              <div key={index} className="subproduct-card">
+
+                {/* Image on Right */}
+                <img src={`${import.meta.env.VITE_IMAGE_API_URL}${sub.image}`} alt={sub.name} />
+
+                {/* Text on Left */}
+                <div className="subproduct-text">
+                  <h3 className="subproduct-name">{sub.name}</h3>
+                  <p className="subproduct-content">{sub.content}</p>
+                  {/* <p className="subproduct-price">Price: ₹{parseFloat(sub.price.toString().replace("₹", "")).toFixed(2)}</p> */}
+                  {/* <p className="subproduct-rating">Rating: <span>★★★★☆</span></p> */}
+                  <div className="button-container">
+                    <button className="view-button" onClick={() => window.location.href = `/${category}/${productName}/${encodeURIComponent(sub.name)}`} >
+                      <FaEye /> View
+                    </button>
+                    {/* <button className="custom-btn1"><span className="custom-icon"><FaBrush/></span>Customize</button> */}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))
-        ) : (
-          <p>No subproducts available.</p>
+            ))
+          ) : (
+            <p>No subproducts available.</p>
+          )}
+        </div>
+        <div className="container-2">
+          <h2 className="foot-head">{subcategoryMeta.foot_head}</h2>
+          <h3 className="foot-subhead">{subcategoryMeta.foot_subhead}</h3>
+          <p className="foot-content">{subcategoryMeta.foot_content}</p>
+        </div>
+        <div className="cta-section">
+          <h2 className="cta-heading">📦 Bulk Orders | 🖨️ Custom Designs & Logo Engraving | 🚚 Fast Pan-India Delivery</h2>
+          <p className="cta-contact">
+            <FaWhatsapp className="icn" /> <a href="https://wa.me/+919266013059" target="_blank" rel="noopener noreferrer">+91 9266 013059</a> &nbsp;|&nbsp; <FaGlobe className="icn-2" />
+            <a href="https://www.coachingpromo.in" target="_blank" rel="noopener noreferrer"> www.CoachingPromo.in</a>
+          </p>
+        </div>
+        {relatedSubcategories.length > 0 && (
+          <>
+            <h3 className="related-heading">Explore More</h3>
+            <Swiper
+              modules={[Navigation, Pagination, Autoplay]}
+              navigation
+              pagination={{ clickable: true }}
+              spaceBetween={15}
+              slidesPerView={2}
+              autoplay={{
+                delay: 3000,
+                disableOnInteraction: false,
+              }}
+              breakpoints={{
+                640: { slidesPerView: 2 },
+                768: { slidesPerView: 3 },
+                1024: { slidesPerView: 4 },
+              }}
+              className="related-swiper"
+            >
+              {relatedSubcategories.map((subcat, idx) => (
+                <SwiperSlide key={idx}>
+                  <div className="related-card">
+                    <img
+                      src={`${import.meta.env.VITE_IMAGE_API_URL}${subcat.image}`}
+                      alt={subcat.name}
+                      className="related-image"
+                    />
+                    <h4 className="related-title">{subcat.name}</h4>
+                    <button
+                      className="cta-button"
+                      onClick={() =>
+                        window.location.href = `/${encodeURIComponent(category)}/${encodeURIComponent(subcat.name)}`
+                      }
+                    >
+                      View Products
+                    </button>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </>
         )}
-      </div>
-      <div className="container-2">
-        <h2 className="foot-head">{subcategoryMeta.foot_head}</h2>
-        <h3 className="foot-subhead">{subcategoryMeta.foot_subhead}</h3>
-        <p className="foot-content">{subcategoryMeta.foot_content}</p>
-      </div>
-      <div className="cta-section">
-        <h2 className="cta-heading">📦 Bulk Orders | 🖨️ Custom Designs & Logo Engraving | 🚚 Fast Pan-India Delivery</h2>
-        <p className="cta-contact">
-          <FaWhatsapp className="icn"/> <a href="https://wa.me/+919266013059" target="_blank" rel="noopener noreferrer">+91 9266 013059</a> &nbsp;|&nbsp; <FaGlobe className="icn-2"/>
-          <a href="https://www.coachingpromo.in" target="_blank" rel="noopener noreferrer"> www.CoachingPromo.in</a>
-        </p>
-      </div>
-      {relatedSubcategories.length > 0 && (
-        <>
-          <h3 className="related-heading">Explore More</h3>
-          <Swiper
-            modules={[Navigation, Pagination, Autoplay]}
-            navigation
-            pagination={{ clickable: true }}
-            spaceBetween={15}
-            slidesPerView={2}
-            autoplay={{
-              delay: 3000,
-              disableOnInteraction: false,
-            }}
-            breakpoints={{
-              640: { slidesPerView: 2 },
-              768: { slidesPerView: 3 },
-              1024: { slidesPerView: 4 },
-            }}
-            className="related-swiper"
-          >
-            {relatedSubcategories.map((subcat, idx) => (
-              <SwiperSlide key={idx}>
-                <div className="related-card">
-                  <img
-                    src={`${import.meta.env.VITE_IMAGE_API_URL}${subcat.image}`}
-                    alt={subcat.name}
-                    className="related-image"
-                  />
-                  <h4 className="related-title">{subcat.name}</h4>
-                  <button
-                        className="cta-button"
-                        onClick={() =>
-                          window.location.href = `/${encodeURIComponent(category)}/${encodeURIComponent(subcat.name)}`
-                        }
-                      >
-                        View Products
-                      </button>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </>
-      )}
-    </div>
+      </div></>
   );
 };
 

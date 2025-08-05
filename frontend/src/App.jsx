@@ -26,7 +26,7 @@ const App = () => {
   const toggleSearch = () => setShowSearch(!showSearch);
 
   return (
-    <Router> {/* 👈 wrap everything in Router */}
+    <Router> 
       <div className="landing-page">
         <Navbar toggleSidebar={() => setSidebarOpen(!sidebarOpen)} sidebarOpen={sidebarOpen} toggleSearch={toggleSearch} />
         {showSearch && (
