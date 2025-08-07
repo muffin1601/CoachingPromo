@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { fabric } from "fabric";
 import { useLocation } from "react-router-dom";
-import Navbar from '../components/Navbar';
 import CanvasToolbar from '../components/customizaton/CanvasToolbar';
 import ThumbnailGallery from '../components/customizaton/ThumbnailGallery';
 import VerticalToolbar from '../components/customizaton/VerticalToolbar';
@@ -10,8 +9,6 @@ import TextControls from '../components/customizaton/TextControls';
 import ExportButtons from '../components/customizaton/ExportButtons';
 import ProductCustomizer from '../components/customizaton/ProductCustomizer';
 import PreviewModalpng from '../components/customizaton/PreviewModalpng';
-import Footer from '../components/Footer';
-import SearchOverlay from "../components/SearchOverlay";
 
 const CustomizeLogo = () => {
   const canvasRef = useRef(null);
@@ -33,7 +30,7 @@ const CustomizeLogo = () => {
   const { productImages = [], productName = "" } = location.state || {};
   const [flag, setFlag] = useState(false);
 
-  // ✅ Save canvas state to viewStates
+  
   const saveCurrentViewState = () => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -140,9 +137,9 @@ const CustomizeLogo = () => {
   if (!isPreviewOpen) return;
   setTimeout(() => {
     for (let i = 0; i < viewStates.length; i++) {
-      updateThumbnail(i); // 🔁 Refresh preview thumbnails
+      updateThumbnail(i); 
     }
-  }, 300); // Delay to allow render
+  }, 300); 
 }, [isPreviewOpen]);
 
 

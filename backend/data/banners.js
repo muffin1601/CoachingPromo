@@ -1,5 +1,12 @@
 const slides = [
   {
+    id: 5,
+    type: "video",
+    title: "Inspire Loyalty with Customized Coaching Merchandise",
+    subtitle: "Boost your coaching institute with high-quality promotional products.",
+    src: "/assets/offerbanner.mp4",
+  },
+  {
     id: 1,
     type: "image",
     title: "",
@@ -27,13 +34,7 @@ const slides = [
     subtitle: "Create a lasting impression with top-notch branding essentials.",
     src: "/assets/banner (2).png",
   },
-  {
-    id: 5,
-    type: "video",
-    title: "Inspire Loyalty with Customized Coaching Merchandise",
-    subtitle: "Boost your coaching institute with high-quality promotional products.",
-    src: "/assets/offerbanner.mp4",
-  },
+  
   {
     id: 6,
     type: "image",
