@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const router = express.Router();
 const Blog = require('../models/blog');
+const multer = require('multer');
 const Comment = require('../models/comment');
 
 router.get('/', async (req, res) => {
@@ -35,15 +36,31 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-router.post('/post-blogs', async(req, res) => {
-    const {title, content , media, author} = req.body;
-    try {
-        const newBlog = new Blog({title, content, media , author});
-        await newBlog.save();
-        res.status(201).json(newBlog);
-    } catch (err) {
-        res.status(400).json({ error: err.message});
-    }
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, 'uploads/blogs'); 
+  },
+  filename: (req, file, cb) => {
+    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1e9);
+    cb(null, uniqueSuffix + '-' + file.originalname);
+  }
+});
+
+const upload = multer({ storage });
+
+// Route to post blog with file upload
+router.post('/post-blogs', upload.single('media'), async (req, res) => {
+  try {
+    const { title, content, author } = req.body;
+    const media = req.file ? req.file.filename : ''; 
+
+    const newBlog = new Blog({ title, content, media, author });
+    await newBlog.save();
+
+    res.status(201).json(newBlog);
+  } catch (err) {
+    res.status(400).json({ error: err.message });
+  }
 });
 
 router.get('/comments/:blogId', async (req, res) => {

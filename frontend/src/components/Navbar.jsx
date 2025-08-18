@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import "../styles/Navbar.css";
-import { FaSearch, FaUser, FaHeart, FaBars, FaTimes } from "react-icons/fa";
+import { FaSearch, FaUser, FaBars, FaTimes } from "react-icons/fa";
 import { MdSchool } from "react-icons/md";
 import RegisterInstituteForm from "./RegisterInstituteForm";
 import SidebarMenu from "./SidebarMenu";
-import categories from "../data/categories"; // Uses static categories data
+import categories from "../data/categories"; // Static categories data
+import { slugify } from "../utils/slugMap"; // Import your slugify function
 
 const Navbar = ({ toggleSearch }) => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -29,11 +30,12 @@ const Navbar = ({ toggleSearch }) => {
             <div className="logo">
               <a href="/">Coaching<span>Promo</span></a>
             </div>
-            
           </div>
+
           <div className="menu-icon-btn" onClick={toggleMenu}>
             {menuOpen ? <FaTimes /> : <FaBars />}
           </div>
+
           {/* Sidebar for mobile */}
           <SidebarMenu
             menuOpen={menuOpen}
@@ -67,7 +69,9 @@ const Navbar = ({ toggleSearch }) => {
                                 <ul>
                                   {sub.products.map((prod, j) => (
                                     <li key={j}>
-                                     <a href={`/${sub.name === "Awards" ? "Awards" : encodeURIComponent(cat.category)}/${encodeURIComponent(prod.name)}`}>
+                                      <a
+                                        href={`/${slugify(cat.category)}/${slugify(prod.name)}`}
+                                      >
                                         {prod.name}
                                       </a>
                                     </li>
@@ -85,7 +89,6 @@ const Navbar = ({ toggleSearch }) => {
             ))}
             <li><a href="/blogs">Blog</a></li>
             <li><a href="/about">About Us</a></li>
-            
           </ul>
 
           {/* Desktop Icons */}
@@ -97,7 +100,6 @@ const Navbar = ({ toggleSearch }) => {
               toggleRegistrationForm={toggleRegistrationForm}
             />
             <button className="login-btn" onClick={() => window.location.href = '/login'}><FaUser /></button>
-            {/* <FaHeart className="icon" /> */}
           </div>
         </div>
       </nav>

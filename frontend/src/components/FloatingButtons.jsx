@@ -35,7 +35,7 @@ const FloatingButtons = () => {
 
   return (
     <div className="floating-buttons">
-      {/* Register Button */}
+      
       <a
         href="#"
         className="register-button"
@@ -48,8 +48,7 @@ const FloatingButtons = () => {
         showRegistrationForm={showRegistrationForm}
        toggleRegistrationForm={toggleRegistrationForm}
       />
-
-      {/* WhatsApp Button */}
+      
       <a
         href="https://wa.me/+919266013059"
         className="whatsapp-button"
@@ -60,7 +59,7 @@ const FloatingButtons = () => {
         <FaWhatsapp className="icon-btn" />
       </a>
 
-      {/* Email Form Button */}
+     
       <a
         href="#"
         onClick={toggleForm}
@@ -71,7 +70,7 @@ const FloatingButtons = () => {
       </a>
       <ContactForm showForm={showForm} toggleForm={toggleForm} />
 
-      {/* Scroll To Top Button */}
+      
       {isVisible && (
         <button
           onClick={scrollToTop}

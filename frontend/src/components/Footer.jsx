@@ -44,7 +44,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-content">
         <div className="our-services">
-          <p className="footer-text-1"><MdLocationCity /> Cities:</p>
+          <p className="footer-text-1"><MdLocationCity /> Supply Cities in India:</p>
           <div className="services-columns">
             {columns.map((group, colIndex) => (
               <ul key={colIndex}>

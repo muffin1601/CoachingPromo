@@ -1,14 +1,16 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from "react";
 import { fabric } from "fabric";
 import { useLocation } from "react-router-dom";
-import CanvasToolbar from '../components/customizaton/CanvasToolbar';
-import ThumbnailGallery from '../components/customizaton/ThumbnailGallery';
-import VerticalToolbar from '../components/customizaton/VerticalToolbar';
-import UploadControls from '../components/customizaton/UploadControls';
-import TextControls from '../components/customizaton/TextControls';
-import ExportButtons from '../components/customizaton/ExportButtons';
-import ProductCustomizer from '../components/customizaton/ProductCustomizer';
-import PreviewModalpng from '../components/customizaton/PreviewModalpng';
+import { Helmet } from "react-helmet-async";
+
+import CanvasToolbar from "../components/customizaton/CanvasToolbar";
+import ThumbnailGallery from "../components/customizaton/ThumbnailGallery";
+import VerticalToolbar from "../components/customizaton/VerticalToolbar";
+import UploadControls from "../components/customizaton/UploadControls";
+import TextControls from "../components/customizaton/TextControls";
+import ExportButtons from "../components/customizaton/ExportButtons";
+import ProductCustomizer from "../components/customizaton/ProductCustomizer";
+import PreviewModalpng from "../components/customizaton/PreviewModalpng";
 
 const CustomizeLogo = () => {
   const canvasRef = useRef(null);
@@ -18,8 +20,7 @@ const CustomizeLogo = () => {
     React.createRef(),
     React.createRef(),
   ]);
-  
-  
+
   const [viewStates, setViewStates] = useState([null, null, null, null]);
   const [activeIndex, setActiveIndex] = useState(0);
   const [activeTool, setActiveTool] = useState("export");
@@ -30,12 +31,11 @@ const CustomizeLogo = () => {
   const { productImages = [], productName = "" } = location.state || {};
   const [flag, setFlag] = useState(false);
 
-  
   const saveCurrentViewState = () => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const json = canvas.toJSON(['id', 'customPart']);
+    const json = canvas.toJSON(["id", "customPart"]);
     json.canvasWidth = canvas.getWidth();
     json.canvasHeight = canvas.getHeight();
     if (canvas.backgroundImage?.getSrc) {
@@ -46,40 +46,38 @@ const CustomizeLogo = () => {
     setViewStates(newStates);
   };
 
-  
+  const updateThumbnail = (index) => {
+    const srcCanvas = canvasRef.current;
+    const dstCanvas = thumbnailCanvasRefs.current[index]?.current;
+    if (!srcCanvas || !dstCanvas) return;
 
- const updateThumbnail = (index) => {
-     const srcCanvas = canvasRef.current;
-     const dstCanvas = thumbnailCanvasRefs.current[index]?.current;
-     if (!srcCanvas || !dstCanvas) return;
- 
-     const dataUrl = srcCanvas.toDataURL({ format: "png" });
- 
-     const thumbCanvas = new fabric.StaticCanvas(dstCanvas);
-     fabric.Image.fromURL(dataUrl, (img) => {
-       const scale = Math.min(
-         dstCanvas.width / img.width,
-         dstCanvas.height / img.height
-       );
-       img.scale(scale);
-       img.set({
-         left: (dstCanvas.width - img.width * scale) / 2,
-         top: (dstCanvas.height - img.height * scale) / 2,
-       });
- 
-       thumbCanvas.clear();
-       thumbCanvas.add(img);
-       thumbCanvas.renderAll();
-     });
-   }; 
+    const dataUrl = srcCanvas.toDataURL({ format: "png" });
+
+    const thumbCanvas = new fabric.StaticCanvas(dstCanvas);
+    fabric.Image.fromURL(dataUrl, (img) => {
+      const scale = Math.min(
+        dstCanvas.width / img.width,
+        dstCanvas.height / img.height
+      );
+      img.scale(scale);
+      img.set({
+        left: (dstCanvas.width - img.width * scale) / 2,
+        top: (dstCanvas.height - img.height * scale) / 2,
+      });
+
+      thumbCanvas.clear();
+      thumbCanvas.add(img);
+      thumbCanvas.renderAll();
+    });
+  };
 
   const handleRedo = () => {
     const canvas = canvasRef.current;
     if (!canvas || redoStack.length === 0) return;
 
     const nextState = redoStack.pop();
-    const currentState = canvas.toJSON(['id', 'customPart']);
-    setUndoStack(prev => [...prev, currentState]);
+    const currentState = canvas.toJSON(["id", "customPart"]);
+    setUndoStack((prev) => [...prev, currentState]);
 
     canvas.loadFromJSON(nextState, () => {
       canvas.renderAll();
@@ -94,9 +92,9 @@ const CustomizeLogo = () => {
     const prevState = undoStack[undoStack.length - 1];
     const newUndoStack = undoStack.slice(0, -1);
 
-    const currentState = canvas.toJSON(['id', 'customPart']);
+    const currentState = canvas.toJSON(["id", "customPart"]);
     setUndoStack(newUndoStack);
-    setRedoStack(prev => [...prev, currentState]);
+    setRedoStack((prev) => [...prev, currentState]);
 
     canvas.loadFromJSON(prevState, () => {
       canvas.renderAll();
@@ -113,7 +111,9 @@ const CustomizeLogo = () => {
     const newState = viewStates[index];
     if (canvas && newState) {
       canvas.loadFromJSON(newState, () => {
-        canvas.mainGroup = canvas.getObjects().find(obj => obj.type === 'group');
+        canvas.mainGroup = canvas.getObjects().find(
+          (obj) => obj.type === "group"
+        );
         canvas.renderAll();
       });
     }
@@ -134,22 +134,42 @@ const CustomizeLogo = () => {
   }, [activeTool]);
 
   useEffect(() => {
-  if (!isPreviewOpen) return;
-  setTimeout(() => {
-    for (let i = 0; i < viewStates.length; i++) {
-      updateThumbnail(i); 
-    }
-  }, 300); 
-}, [isPreviewOpen]);
-
+    if (!isPreviewOpen) return;
+    setTimeout(() => {
+      for (let i = 0; i < viewStates.length; i++) {
+        updateThumbnail(i);
+      }
+    }, 300);
+  }, [isPreviewOpen]);
 
   return (
-    
+    <>
+      <Helmet>
+        <title>
+          {productName
+            ? `Customize ${productName} | CoachingPromo`
+            : "Customize Your Product | CoachingPromo"}
+        </title>
+        <meta
+          name="description"
+          content={
+            productName
+              ? `Easily customize ${productName} with your logo, text, and designs using CoachingPromo's interactive product customizer.`
+              : "Use CoachingPromo’s customization tool to add your logo, text, and branding to a wide range of promotional products."
+          }
+        />
+        <link
+          rel="canonical"
+          href={`https://coachingpromo.in/${productName
+            ?.toLowerCase()
+            .replace(/\s+/g, "-")}/customize`}
+        />
+      </Helmet>
+
       <div className="customizer-page">
         <h2 className="customizer-title">Customize your product</h2>
 
         <div className="customizer-container">
-          {/* Top Bar */}
           <div className="top-tools-bar">
             <CanvasToolbar
               canvasRef={canvasRef}
@@ -163,9 +183,7 @@ const CustomizeLogo = () => {
             />
           </div>
 
-          {/* Main Customizer Body */}
           <div className="customizer-main">
-
             <div className="vertical-toolbar">
               <VerticalToolbar
                 onSelectTool={handleToolChange}
@@ -188,32 +206,29 @@ const CustomizeLogo = () => {
                 />
               )}
               {activeTool === "export" && (
-                <ExportButtons
-                  canvasRef={canvasRef}
-                  viewStates={viewStates}
-                />
+                <ExportButtons canvasRef={canvasRef} viewStates={viewStates} />
               )}
             </div>
 
             <div className="canvas-wrapper">
               <ProductCustomizer
                 canvasRef={canvasRef}
-                mainImageUrl={`${import.meta.env.VITE_IMAGE_API_URL}${productImages[activeIndex]}`}
+                mainImageUrl={`${import.meta.env.VITE_IMAGE_API_URL}${
+                  productImages[activeIndex]
+                }`}
                 savedState={viewStates[activeIndex]}
               />
             </div>
           </div>
 
-          {/* Preview Modal */}
           <PreviewModalpng
             isOpen={isPreviewOpen}
             onClose={() => setActiveTool("export")}
             viewStates={viewStates}
-            
           />
         </div>
       </div>
-      
+    </>
   );
 };
 
