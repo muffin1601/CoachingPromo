@@ -61,8 +61,15 @@ const Footer = () => {
               </ul>
             ))}
           </div>
-        </div>
 
+          {/* New content below cities */}
+          <div className="footer-extra-content">
+            <p>
+              CoachingPromo is one of India’s trusted providers of customized promotional items for coaching institutes, schools, colleges, institutes, and businesses. We offer bulk branding solutions like promotional t-shirts, custom diaries, logo-printed bags, stationery kits, pens, and other corporate gifting products — tailored to suit your brand’s identity.<br /><br />
+              Our services are available across major Indian cities including Delhi, Mumbai, Bengaluru, Hyderabad, Ahmedabad, Pune, Jaipur, Surat, Bhopal, Indore, Lucknow, Chandigarh, Ranchi, Guwahati, and Nagpur. Whether for student giveaways or corporate promotions, CoachingPromo helps you create memorable branding through high-quality, personalized gifts.
+            </p>
+          </div>
+        </div>
         <div className="social-media">
           <p className="footer-text">Follow us on social media</p>
           <div className="icons">

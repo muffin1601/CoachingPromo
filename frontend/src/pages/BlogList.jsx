@@ -32,6 +32,7 @@ const BlogList = () => {
             + Create New Blog
           </Link>
         </div>
+
         <div className="blog-list-grid">
           {blogs.map((blog) => (
             <div className="blog-card" key={blog._id}>
@@ -72,6 +73,17 @@ const BlogList = () => {
               </Link>
             </div>
           ))}
+        </div>
+
+        {/* New content below the blogs */}
+        <div className="blog-list-extra-content">
+          <p>
+            Discover how promotional items like custom t-shirts, bags, diaries,
+            and stationery can help boost your institute or business branding.
+            Our latest blogs share creative ideas, real client stories, and
+            trending corporate gifting solutions for 2025. Stay updated, grow
+            organically, and make your brand memorable.
+          </p>
         </div>
       </div>
     </>

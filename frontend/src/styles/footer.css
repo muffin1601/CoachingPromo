@@ -131,6 +131,29 @@
     cursor: default;
 }
 
+.footer-extra-content {
+  margin-top: 25px;
+  padding: 15px 20px;
+  background: #f1f1f1; 
+  color: #333;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  text-align: left;
+}
+
+@media (max-width: 900px) {
+  .footer-extra-content {
+    text-align: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-extra-content {
+    font-size: 0.9rem;
+  }
+}
+
 @media (max-width: 900px) {
     .footer-content {
         flex-direction: column;
