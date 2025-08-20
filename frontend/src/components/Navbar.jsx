@@ -70,7 +70,11 @@ const Navbar = ({ toggleSearch }) => {
                                   {sub.products.map((prod, j) => (
                                     <li key={j}>
                                       <a
-                                        href={`/${slugify(cat.category)}/${slugify(prod.name)}`}
+                                        href={`/${slugify(
+                                          ["Trophy", "Wooden Trophy", "Badges", "Medals", "Other Awards"].includes(prod.name)
+                                            ? "Awards"
+                                            : cat.category
+                                        )}/${slugify(prod.name)}`}
                                       >
                                         {prod.name}
                                       </a>
