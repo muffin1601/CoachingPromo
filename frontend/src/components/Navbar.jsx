@@ -97,13 +97,37 @@ const Navbar = ({ toggleSearch }) => {
 
           {/* Desktop Icons */}
           <div className="nav-icons">
-            <button className="search-btn" onClick={toggleSearch}><FaSearch /></button>
-            <MdSchool className="register-btn" onClick={toggleRegistrationForm} />
+            <button
+              className="search-btn"
+              onClick={toggleSearch}
+              aria-label="Search"
+              title="Search"
+            >
+              <FaSearch />
+            </button>
+
+            <button
+              className="register-btn"
+              onClick={toggleRegistrationForm}
+              aria-label="Register Institute"
+              title="Register Institute"
+            >
+              <MdSchool />
+            </button>
+
             <RegisterInstituteForm
               showRegistrationForm={showRegistrationForm}
               toggleRegistrationForm={toggleRegistrationForm}
             />
-            <button className="login-btn" onClick={() => window.location.href = '/login'}><FaUser /></button>
+
+            <button
+              className="login-btn"
+              onClick={() => window.location.href = '/login'}
+              aria-label="Login"
+              title="Login"
+            >
+              <FaUser />
+            </button>
           </div>
         </div>
       </nav>

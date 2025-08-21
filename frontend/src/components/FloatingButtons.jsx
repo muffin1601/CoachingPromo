@@ -40,6 +40,7 @@ const FloatingButtons = () => {
         href="#"
         className="register-button"
         onClick={toggleRegistrationForm}
+        aria-label="register-institute"
         data-title="Insert details"
       >
         <MdSchool className="icon-btn" />
@@ -54,6 +55,7 @@ const FloatingButtons = () => {
         className="whatsapp-button"
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="chat-whtsapp"
         data-title="Chat on WhatsApp"
       >
         <FaWhatsapp className="icon-btn" />
@@ -64,6 +66,7 @@ const FloatingButtons = () => {
         href="#"
         onClick={toggleForm}
         className="email-button"
+        aria-label="enquiry-button"
         data-title="Enquiry"
       >
         <FaEnvelope className="icon-btn" />
