@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/footer.css";
-import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { MdLocationCity } from "react-icons/md";
 
 const stateCityList = [
@@ -62,7 +62,6 @@ const Footer = () => {
             ))}
           </div>
 
-          {/* New content below cities */}
           <div className="footer-extra-content">
             <p>
               CoachingPromo is one of India’s trusted providers of customized promotional items for coaching institutes, schools, colleges, institutes, and businesses. We offer bulk branding solutions like promotional t-shirts, custom diaries, logo-printed bags, stationery kits, pens, and other corporate gifting products — tailored to suit your brand’s identity.<br /><br />
@@ -70,12 +69,36 @@ const Footer = () => {
             </p>
           </div>
         </div>
+
         <div className="social-media">
           <p className="footer-text">Follow us on social media</p>
           <div className="icons">
-            <a href="#"><FaFacebookF /></a>
-            <a href="#"><FaTwitter /></a>
-            <a href="#"><FaInstagram /></a>
+            <a
+              href="https://www.facebook.com/profile.php?id=61578398193650"
+              aria-label="Visit our Facebook page"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaFacebookF />
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/mycoaching-promo-a0b4ba380/"
+              aria-label="Visit our LinkedIn page"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaLinkedin />
+            </a>
+
+            <a
+              href="https://www.instagram.com/coachingpromo.in/"
+              aria-label="Visit our Instagram page"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaInstagram />
+            </a>
           </div>
         </div>
 

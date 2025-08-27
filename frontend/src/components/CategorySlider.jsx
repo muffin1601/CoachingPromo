@@ -23,7 +23,7 @@ const CategorySlider = ({ category }) => {
       transition={{ duration: 1.2, ease: "easeOut" }}
       className="animated-section-1"
     >
-      <h2 className="section-title">{category.name}</h2>
+      <h3 className="section-title">{category.name}</h3>
 
       <section className="product-slider">
         <Swiper

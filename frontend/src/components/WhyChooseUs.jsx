@@ -48,7 +48,7 @@ const WhyChooseUs = () => {
                   className="animated-section"
                 >
                   <img src={item.img} alt={`${item.title} icon`} className="icon-check" />
-                  <h4>{item.title}</h4>
+                  <h3>{item.title}</h3> {/* Changed h4 → h3 */}
                   <p>{item.desc}</p>
                 </motion.div>
               </div>
@@ -70,7 +70,7 @@ const WhyChooseUs = () => {
                   className="animated-section"
                 >
                   <img src={item.img} alt={`${item.title} icon`} className="icon-check" />
-                  <h4>{item.title}</h4>
+                  <h3>{item.title}</h3> {/* Changed h4 → h3 */}
                   <p>{item.desc}</p>
                 </motion.div>
               </div>
