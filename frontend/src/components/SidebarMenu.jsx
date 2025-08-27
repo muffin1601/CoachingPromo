@@ -68,14 +68,37 @@ const SidebarMenu = ({
         </ul>
 
         <div className="sidebar-icons">
-          <button onClick={() => { toggleSearch(); toggleMenu(); }}><FaSearch /></button>
-<button onClick={toggleRegistrationForm}><MdSchool /></button>
+          <button
+            onClick={() => { toggleSearch(); toggleMenu(); }}
+            aria-label="Search"
+          >
+            <FaSearch />
+          </button>
+
+          <button
+            onClick={toggleRegistrationForm}
+            aria-label="Register institute"
+          >
+            <MdSchool />
+          </button>
+
           <RegisterInstituteForm
-              showRegistrationForm={showRegistrationForm}
-              toggleRegistrationForm={toggleRegistrationForm}
-            />
-          <button onClick={() => { window.location.href = "/login"; }}><FaUser /></button>
-          <button><FaHeart /></button>
+            showRegistrationForm={showRegistrationForm}
+            toggleRegistrationForm={toggleRegistrationForm}
+          />
+
+          <button
+            onClick={() => { window.location.href = "/login"; }}
+            aria-label="Login"
+          >
+            <FaUser />
+          </button>
+
+          <button
+            aria-label="Add to favorites"
+          >
+            <FaHeart />
+          </button>
         </div>
       </div>
     </>

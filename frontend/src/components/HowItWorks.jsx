@@ -1,6 +1,5 @@
 import React from "react";
 import "../styles/howitworks.css";
-import { FaBoxOpen, FaPaintBrush, FaCheckCircle, FaTruck } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
@@ -33,28 +32,44 @@ const variants = {
 };
 
 const HowItWorks = () => {
-  // Optionally detect small screen to disable animations
-  const isSmallScreen = typeof window !== "undefined" && window.matchMedia("(max-width: 768px)").matches;
+  const isSmallScreen =
+    typeof window !== "undefined" &&
+    window.matchMedia("(max-width: 768px)").matches;
 
   return (
     <section className="how-it-works">
       <h2>How It Works</h2>
-      <p className="subtitle">A simple process to get your customized promotional products.</p>
+      <p className="subtitle">
+        A simple process to get your customized promotional products.
+      </p>
       <div className="steps">
         {steps.map((step, idx) => {
-          const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 });
+          const [ref, inView] = useInView({
+            triggerOnce: true,
+            threshold: 0.2
+          });
 
           return (
             <div className="step" key={idx}>
               <motion.div
                 ref={ref}
                 initial={isSmallScreen ? undefined : "hidden"}
-                animate={isSmallScreen ? undefined : (inView ? "visible" : "hidden")}
+                animate={
+                  isSmallScreen
+                    ? undefined
+                    : inView
+                    ? "visible"
+                    : "hidden"
+                }
                 variants={variants}
                 transition={{ duration: 1.2, ease: "easeOut" }}
                 className="animated-section"
               >
-               <img src= {step.icon} className="icon-obj" />
+                <img
+                  src={step.icon}
+                  alt={`${step.title} icon`}
+                  className="icon-obj"
+                />
                 <h4>{step.title}</h4>
                 <p>{step.desc}</p>
               </motion.div>

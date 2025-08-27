@@ -59,7 +59,12 @@ const CategorySlider = ({ category }) => {
                       </button>
                     </div>
                   </div>
-                  <button className="custom-btn">
+                  <button
+                    href='#'
+                    type="button"
+                    className="custom-btn"
+                    aria-label="Add to favorites"
+                  >
                     <FaHeart />
                   </button>
                   <img
