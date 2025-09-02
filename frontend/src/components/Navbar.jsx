@@ -1,16 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/Navbar.css";
 import { FaSearch, FaUser, FaBars, FaTimes } from "react-icons/fa";
 import { MdSchool } from "react-icons/md";
 import RegisterInstituteForm from "./RegisterInstituteForm";
 import SidebarMenu from "./SidebarMenu";
-import categories from "../data/categories"; // Static categories data
-import { slugify } from "../utils/slugMap"; // Import your slugify function
-
+import categories from "../data/categories";
+import { slugify } from "../utils/slugMap";
+import axios from "axios"; 
 const Navbar = ({ toggleSearch }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(null);
   const [showRegistrationForm, setShowRegistrationForm] = useState(false);
+  const [visitorCount, setVisitorCount] = useState(0); 
 
   const toggleRegistrationForm = () => {
     setShowRegistrationForm((prev) => !prev);
@@ -20,15 +21,30 @@ const Navbar = ({ toggleSearch }) => {
     setMenuOpen((prev) => !prev);
   };
 
+ 
+  useEffect(() => {
+    axios
+      .get(`${import.meta.env.VITE_API_URL}/visitors/count`) 
+      .then((res) => setVisitorCount(res.data.totalVisitors))
+      .catch((err) => console.error("Failed to fetch visitor count", err));
+  }, []);
+
   return (
     <header className="header">
-      <div className="top-banner">New & Trending For 2025</div>
+      <div className="top-banner">
+        New & Trending For 2025
+        <span style={{ float: "right", fontWeight: "500",paddingRight:"100px" }}>
+          Visitors Today: {visitorCount}
+        </span>
+      </div>
 
       <nav className="navbar">
         <div className="nav-container">
           <div className="mobile-header">
             <div className="logo">
-              <a href="/">Coaching<span>Promo</span></a>
+              <a href="/">
+                Coaching<span>Promo</span>
+              </a>
             </div>
           </div>
 
@@ -47,7 +63,11 @@ const Navbar = ({ toggleSearch }) => {
 
           {/* Desktop Mega Menu */}
           <ul className="nav-links desktop-only">
-            <li><a href="/" className="active">Home</a></li>
+            <li>
+              <a href="/" className="active">
+                Home
+              </a>
+            </li>
 
             {categories.map((cat, index) => (
               <li className="dropdown" key={index}>
@@ -56,22 +76,33 @@ const Navbar = ({ toggleSearch }) => {
                   onMouseEnter={() => setDropdownOpen(cat.category)}
                   onMouseLeave={() => setDropdownOpen(null)}
                 >
-                  <a href="#">{cat.category} ▾</a>
+                  <a href="#">
+                    {cat.category} ▾
+                  </a>
                   {dropdownOpen === cat.category && (
                     <div className="mega-dropdown">
-                      {Array.from({ length: Math.ceil(cat.subcategories.length / 2) }).map((_, columnIndex) => {
-                        const subGroup = cat.subcategories.slice(columnIndex * 2, columnIndex * 2 + 2);
+                      {Array.from({
+                        length: Math.ceil(cat.subcategories.length / 2),
+                      }).map((_, columnIndex) => {
+                        const subGroup = cat.subcategories.slice(
+                          columnIndex * 2,
+                          columnIndex * 2 + 2
+                        );
                         return (
                           <div className="mega-column" key={columnIndex}>
                             {subGroup.map((sub, subIndex) => (
                               <div className="dropdown-category" key={subIndex}>
-                                <div className="dropdown-category-title">{sub.name}</div>
+                                <div className="dropdown-category-title">
+                                  {sub.name}
+                                </div>
                                 <ul>
                                   {sub.products.map((prod, j) => (
                                     <li key={j}>
                                       <a
                                         href={`/${slugify(
-                                          ["Trophy", "Wooden Trophy", "Badges", "Medals", "Other Awards"].includes(prod.name)
+                                          ["Trophy", "Wooden Trophy", "Badges", "Medals", "Other Awards"].includes(
+                                            prod.name
+                                          )
                                             ? "Awards"
                                             : cat.category
                                         )}/${slugify(prod.name)}`}
@@ -91,8 +122,12 @@ const Navbar = ({ toggleSearch }) => {
                 </div>
               </li>
             ))}
-            <li><a href="/blogs">Blog</a></li>
-            <li><a href="/about">About Us</a></li>
+            <li>
+              <a href="/blogs">Blog</a>
+            </li>
+            <li>
+              <a href="/about">About Us</a>
+            </li>
           </ul>
 
           {/* Desktop Icons */}
@@ -122,7 +157,7 @@ const Navbar = ({ toggleSearch }) => {
 
             <button
               className="login-btn"
-              onClick={() => window.location.href = '/login'}
+              onClick={() => (window.location.href = "/login")}
               aria-label="Login"
               title="Login"
             >
