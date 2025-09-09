@@ -12,7 +12,7 @@ const categories = [
       {
         name: "Jackets & Hoodies",
         products: [
-          // { name: "Sweatshirts" },
+         
           { name: "Hoodies-Jackets" },
           { name: "Nehru Jacket" },
           { name: "Teacher Jacket" }
