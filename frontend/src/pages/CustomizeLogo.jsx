@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { fabric } from "fabric";
 import { useLocation } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+import { Helmet } from "react-helmet";
 
 import CanvasToolbar from "../components/customizaton/CanvasToolbar";
 import ThumbnailGallery from "../components/customizaton/ThumbnailGallery";

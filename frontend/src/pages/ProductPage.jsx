@@ -11,7 +11,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
-import { Helmet } from "react-helmet-async";
+import { Helmet } from "react-helmet";
 import { metaByProductName } from "../data/metaData";
 import { fetchSlugMap, slugify } from "../utils/slugMap";
 
@@ -33,13 +33,12 @@ const ProductPage = () => {
 
   const category = slugMap[rawCategory] || rawCategory;
   const productName = slugMap[`${rawCategory}/${rawProductName}`] || rawProductName;
+  const productSlug = slugify(productName);
+  const meta = metaByProductName[productSlug];
 
-  const meta = metaByProductName[productName] || {
-    title: "CoachingPromo – Custom Promotional Products",
-    description: "Explore premium promotional products for coaching institutes. T-Shirts, Bags, Stationery, and more. Bulk custom printing. PAN India shipping."
-  };
 
   const canonicalUrl = `https://coachingpromo.in/${rawCategory}/${rawProductName}`;
+  console.log("Canonical URL:", canonicalUrl);
 
   useEffect(() => {
     if (!category) return;
@@ -100,7 +99,7 @@ const ProductPage = () => {
         <div className="cta-section">
           <h2 className="cta-heading">📦 Bulk Orders | 🖨️ Custom Designs & Logo Engraving | 🚚 Fast Pan-India Delivery</h2>
           <p className="cta-contact">
-            <FaWhatsapp className="icn" /> <a href="https://wa.me/+919266013059" target="_blank" rel="noopener noreferrer">+91 9266 013059</a> &nbsp;|&nbsp; 
+            <FaWhatsapp className="icn" /> <a href="https://wa.me/+919266013059" target="_blank" rel="noopener noreferrer">+91 9266 013059</a> &nbsp;|&nbsp;
             <FaGlobe className="icn-2" /> <a href="https://www.coachingpromo.in" target="_blank" rel="noopener noreferrer">www.CoachingPromo.in</a>
           </p>
         </div>
@@ -133,7 +132,7 @@ const ProductPage = () => {
             </Swiper>
           </>
         )}
-      
+
       </div>
     </>
   );

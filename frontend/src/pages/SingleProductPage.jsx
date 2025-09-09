@@ -9,7 +9,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { fetchSlugMap, slugify } from "../utils/slugMap";
-import { Helmet } from "react-helmet-async";
+import { Helmet } from "react-helmet";
 import { subcategoryTemplates } from "../data/subcategoryTemplates";
 
 // Add this helper function

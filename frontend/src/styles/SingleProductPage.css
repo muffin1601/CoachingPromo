@@ -72,14 +72,14 @@
 .main-product-image-1 {
   width: 100%;
   max-width: 400px;
-  height: 390px;
+  height: auto;
   border-radius: 20px;
   object-fit: cover;
   transition: transform 0.3s ease-in-out;
 }
 
 .main-product-image-1:hover {
-  transform: scale(1.05);
+  transform: scale(1.01);
 }
 
 /* 🔹 Product Details */

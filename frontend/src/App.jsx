@@ -18,6 +18,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import SearchResults from "./pages/SearchResults";
 import Navbar from "./components/Navbar"
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 import SearchOverlay from "./components/SearchOverlay";
 
 const App = () => {
@@ -27,6 +28,7 @@ const App = () => {
 
   return (
     <Router> 
+       <ScrollToTop />
       <div className="landing-page">
         <Navbar toggleSidebar={() => setSidebarOpen(!sidebarOpen)} sidebarOpen={sidebarOpen} toggleSearch={toggleSearch} />
         {showSearch && (

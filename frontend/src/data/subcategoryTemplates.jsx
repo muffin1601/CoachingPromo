@@ -945,7 +945,7 @@ Suitable for students and faculty, the {productName} completes graduation attire
     },
 
     "Notepad": {
-        productTitle: "Sticky {productName} | Custom, Personalized & Branded Memo Pads",
+        productTitle: " {productName} | Custom, Personalized & Branded Memo Pads",
         shortDescription: "Organize tasks with a sticky {productName} – perfect for schools, offices, and events.",
         longDescription: "A sticky {productName} is more than just stationery – it’s an everyday productivity essential. With self-adhesive pages, compact design, and vibrant colors, these memo pads are perfect for quick notes, reminders, and creative ideas. Businesses often choose custom sticky notes to promote their brand. Crafted with high-quality paper and reliable adhesive, each {productName} ensures smooth writing and easy application. Available in standard square sizes, colorful shapes, and eco-friendly options, sticky {productName}s meet diverse requirements.",
         specifications: [
@@ -960,7 +960,7 @@ Suitable for students and faculty, the {productName} completes graduation attire
             { "q": "Are eco-friendly sticky {productName}s available?", "a": "Yes, eco-friendly options are available with recyclable paper." },
             { "q": "Do you accept bulk orders?", "a": "Absolutely! We supply bulk sticky notepads for corporate promotions and events." }
         ],
-        metaTitle: "Sticky {productName} | Custom, Personalized & Branded Memo Pads",
+        metaTitle: " {productName} | Custom, Personalized & Branded Memo Pads",
         metaDescription: "Shop sticky {productName}s for offices, schools, and events. Explore custom sticky notes, branded memo pads, and eco-friendly stationery."
     },
 
