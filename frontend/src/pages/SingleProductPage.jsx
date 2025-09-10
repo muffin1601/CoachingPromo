@@ -17,9 +17,9 @@ const getTemplateKey = (productName) => {
   const templateMap = {
     "Polo T-Shirt": "Polo T-Shirts",
     "Round Neck T-Shirt": "Round Neck T-Shirts",
-    "Formal Shirt": "Formal Shirts",
+    "Formal Shirts": "Formal Shirts",
     "Corporate Shirt": "Corporate Shirts",
-    "Hoodies-Jacket": "Hoodies-Jackets",
+    "Hoodies-Jacket": "Hoodies-jackets",
     "Nehru Jacket": "Nehru Jacket",
     "Teacher Jacket": "Teacher Jacket",
     "Graduation Hat": "Graduation Hat",
@@ -82,7 +82,7 @@ const SingleProductPage = () => {
     loadSlugMap();
   }, []);
 
-  // Fetch product data
+
   useEffect(() => {
     if (!Object.keys(slugMap).length) return;
 
@@ -109,13 +109,14 @@ const SingleProductPage = () => {
     fetchProduct();
   }, [slugMap, catSlug, prodSlug, subSlug]);
 
+  console.log("Product name:", deslugNames.productName);
+console.log("Template key:", getTemplateKey(deslugNames.productName));
   if (!product) return <p className="error-message-1">Loading product...</p>;
 
   const templateKey = getTemplateKey(deslugNames.productName);
   const template = subcategoryTemplates[templateKey] || null;
   const canonicalUrl = `${window.location.origin}/${catSlug}/${prodSlug}/${subSlug}`;
 
-  // Customize button logic
   const customizeButton = (() => {
     const routeMap = {
       "Polo T-Shirts": "/customize/polotshirt",
@@ -266,7 +267,11 @@ const SingleProductPage = () => {
 
           <div className="product-long-description">
             <h3>About {product.name}:</h3>
-            <p>{template.longDescription.replace(/{productName}/g, product.name)}</p>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: template.longDescription.replace(/{productName}/g, product.name),
+              }}
+            />
           </div>
         </div>
       )}
