@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 const steps = [
-  { icon: "/assets/icons/2 (2).png", title: "Choose a Product", desc: "Browse our wide range of promotional items." },
-  { icon: "/assets/icons/2 (1).png", title: "Customize", desc: "Add your branding, logo, or message." },
-  { icon: "/assets/icons/2 (4).png", title: "Approve Design", desc: "Review and confirm the final look before production." },
-  { icon: "/assets/icons/2 (3).png", title: "Get Delivered", desc: "Receive your customized products at your doorstep." }
+  { icon: "/assets/icons/2 (2).webp", title: "Choose a Product", desc: "Browse our wide range of promotional items." },
+  { icon: "/assets/icons/2 (1).webp", title: "Customize", desc: "Add your branding, logo, or message." },
+  { icon: "/assets/icons/2 (4).webp", title: "Approve Design", desc: "Review and confirm the final look before production." },
+  { icon: "/assets/icons/2 (3).webp", title: "Get Delivered", desc: "Receive your customized products at your doorstep." }
 ];
 
 const variants = {

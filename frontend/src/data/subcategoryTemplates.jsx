@@ -48,7 +48,7 @@ export const subcategoryTemplates = {
         metaDescription: "Shop premium {productName} – perfect for staff uniforms, corporate branding & promotions. Available in all sizes with custom logo printing. Bulk orders & fast delivery."
     },
     "Round Neck T-Shirts": {
-        productTitle: "{productName} for Men | Custom Logo Printing & Branding",
+        productTitle: "{productName} | Custom Logo Printing & Branding",
         shortDescription: "Classic {productName} – perfect for everyday wear, staff uniforms, corporate branding & promotional giveaways.",
         longDescription: `
     <h3>Product Description:</h3>

@@ -1,16 +1,21 @@
-import React, {useState} from 'react';
+import React from 'react';
 import '../../styles/AdminDashboard.css';
 import Sidebar from '../../components/admin/Sidebar';
 import ProductsTable from '../../components/admin/ProductsTable';
 
 const AdminDashboard = () => {
   return (
-      <div className="admin-container">
+    <div className="admin-container">
+      <aside className="sidebar">
         <Sidebar />
-        <div className="main-content">
+      </aside>
+      <main className="main-content">
+        <div className="content-wrapper">
+          <h1 className="dashboard-title">Admin Dashboard</h1>
           <ProductsTable />
         </div>
-      </div>
+      </main>
+    </div>
   );
 };
 

@@ -67,51 +67,65 @@ router.delete("/products/delete/:id", async (req, res) => {
   }
 });
 
-router.put("/products/update-product/:id", upload.fields([
-  { name: "mainImage", maxCount: 1 },
-  { name: "subImages", maxCount: 10 },
-]), async (req, res) => {
-  try {
-    const { id } = req.params;
-    const updateData = req.body;
+router.put(
+  "/products/update-product/:id",
+  upload.fields([
+    { name: "mainImage", maxCount: 1 },
+    { name: "subImages", maxCount: 3 }, // allow max 3 sub images
+  ]),
+  async (req, res) => {
+    try {
+      const { id } = req.params;
+      const updateData = req.body;
 
-    const category = await Subproduct.findOne({ "subcategories.products._id": id });
-    if (!category) return res.status(404).json({ error: "Product not found" });
+      const category = await Subproduct.findOne({
+        "subcategories.products._id": id,
+      });
+      if (!category)
+        return res.status(404).json({ error: "Product not found" });
 
-    for (let subcat of category.subcategories) {
-      const product = subcat.products.id(id);
-      if (product) {
-        if (req.files.mainImage) {
-          if (product.image) {
-            const oldPath = path.join(__dirname, "..", product.image);
-            if (fs.existsSync(oldPath)) deleteFile(oldPath);
+      for (let subcat of category.subcategories) {
+        const product = subcat.products.id(id);
+        if (product) {
+          // Main Image update
+          if (req.files.mainImage) {
+            if (product.image) {
+              const oldPath = path.join(__dirname, "..", product.image);
+              if (fs.existsSync(oldPath)) deleteFile(oldPath);
+            }
+            updateData.image = `/uploads/products/${req.files.mainImage[0].filename}`;
           }
-          updateData.image = `/uploads/products/${req.files.mainImage[0].filename}`;
+
+          // Sub Images update (replace with up to 3)
+          if (req.files.subImages) {
+            if (product.subImages && product.subImages.length > 0) {
+              product.subImages.forEach((img) => {
+                const oldPath = path.join(__dirname, "..", img);
+                if (fs.existsSync(oldPath)) deleteFile(oldPath);
+              });
+            }
+            updateData.subImages = req.files.subImages.map(
+              (file) => `/uploads/products/${file.filename}`
+            );
+          }
+
+          Object.assign(product, updateData);
+          await category.save();
+
+          return res.json({ success: true, product });
         }
-
-        if (req.files.subImages) {
-          product.subImages.forEach((img) => {
-            const oldPath = path.join(__dirname, "..", img);
-            if (fs.existsSync(oldPath)) deleteFile(oldPath);
-          });
-          updateData.subImages = req.files.subImages.map(
-            (file) => `/uploads/products/${file.filename}`
-          );
-        }
-
-        Object.assign(product, updateData);
-        await category.save();
-
-        return res.json({ success: true, product });
       }
-    }
 
-    res.status(404).json({ error: "Product not found in subcategories" });
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ success: false, error: "Failed to update product" });
+      res.status(404).json({ error: "Product not found in subcategories" });
+    } catch (err) {
+      console.error(err);
+      res
+        .status(500)
+        .json({ success: false, error: "Failed to update product" });
+    }
   }
-});
+);
+
 
 router.post("/categories/:categoryId/subcategories/:subcategoryId/add-product", upload.fields([
   { name: "image", maxCount: 1 },

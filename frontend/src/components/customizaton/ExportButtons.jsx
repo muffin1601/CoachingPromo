@@ -203,7 +203,7 @@ const generatePDF = async () => {
             </div>
             {/* Image inside the overlay */}
             <img
-              src="/size-chart.jpeg" // Change path as needed
+              src="/size-chart.webp" 
               alt="Size Chart"
               className="size-chart-image"
             />

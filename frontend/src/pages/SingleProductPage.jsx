@@ -140,7 +140,7 @@ console.log("Template key:", getTemplateKey(deslugNames.productName));
           className="customize-btn-1"
           onClick={() =>
             navigate(`/${catSlug}/${prodSlug}/${subSlug}/customize`, {
-              state: { productImages: [product.image, ...(product.subImages || [])], productName: product.name }
+              state: { productImages: [product.image, ...(product.subImages || [])], productName: product.name, category: deslugNames.categoryName },
             })
           }
         >
@@ -266,7 +266,7 @@ console.log("Template key:", getTemplateKey(deslugNames.productName));
           </div>
 
           <div className="product-long-description">
-            <h3>About {product.name}:</h3>
+            {/* <h3>About {product.name}:</h3> */}
             <div
               dangerouslySetInnerHTML={{
                 __html: template.longDescription.replace(/{productName}/g, product.name),

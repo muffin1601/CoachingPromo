@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { fabric } from "fabric";
-import { useLocation } from "react-router-dom";
+import { useLocation ,useParams} from "react-router-dom";
 import { Helmet } from "react-helmet";
 
 import CanvasToolbar from "../components/customizaton/CanvasToolbar";
@@ -11,6 +11,7 @@ import TextControls from "../components/customizaton/TextControls";
 import ExportButtons from "../components/customizaton/ExportButtons";
 import ProductCustomizer from "../components/customizaton/ProductCustomizer";
 import PreviewModalpng from "../components/customizaton/PreviewModalpng";
+import BackpackExportButtons from "../components/customizaton/BackpackExportButtons";
 
 const CustomizeLogo = () => {
   const canvasRef = useRef(null);
@@ -28,8 +29,12 @@ const CustomizeLogo = () => {
   const [redoStack, setRedoStack] = useState([]);
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
   const location = useLocation();
-  const { productImages = [], productName = "" } = location.state || {};
+  const { productImages = [], productName = "", category = " " } = location.state || {};
   const [flag, setFlag] = useState(false);
+  const { category: catSlug, productName: prodSlug, subproduct: subSlug } = useParams();
+ 
+  
+  console.log("prodSlug from useParams:", category);
 
   const saveCurrentViewState = () => {
     const canvas = canvasRef.current;
@@ -176,11 +181,13 @@ const CustomizeLogo = () => {
               onUndo={handleUndo}
               onRedo={handleRedo}
             />
-            <ThumbnailGallery
-              activeIndex={activeIndex}
-              onThumbnailClick={handleThumbnailClick}
-              thumbnailCanvasRefs={thumbnailCanvasRefs}
-            />
+            {prodSlug !== "institute-backpack" && (
+              <ThumbnailGallery
+                activeIndex={activeIndex}
+                onThumbnailClick={handleThumbnailClick}
+                thumbnailCanvasRefs={thumbnailCanvasRefs}
+              />
+            )}
           </div>
 
           <div className="customizer-main">
@@ -206,7 +213,11 @@ const CustomizeLogo = () => {
                 />
               )}
               {activeTool === "export" && (
-                <ExportButtons canvasRef={canvasRef} viewStates={viewStates} />
+                prodSlug === "institute-backpack" ? (
+                  <BackpackExportButtons canvasRef={canvasRef} viewStates={viewStates} />
+                ) : (
+                  <ExportButtons canvasRef={canvasRef} viewStates={viewStates} />
+                )
               )}
             </div>
 

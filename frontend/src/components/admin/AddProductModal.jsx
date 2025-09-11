@@ -71,14 +71,12 @@ const AddProductModal = ({ isOpen, onClose, onSave }) => {
     setProductData((prev) => ({ ...prev, image: e.target.files[0] }));
   };
 
-  const handleSubImagesChange = (e) => {
-    const files = Array.from(e.target.files);
-    if (files.length > 3) {
-      alert("You can upload a maximum of 3 subimages.");
-      e.target.value = ''; // clear the input
-      return;
-    }
-    setProductData((prev) => ({ ...prev, subImages: files }));
+  const handleSubImageUpload = (file, index) => {
+    setProductData((prev) => {
+      const updated = [...prev.subImages];
+      updated[index] = file;
+      return { ...prev, subImages: updated };
+    });
   };
 
   const handleSubmit = async (e) => {
@@ -96,7 +94,10 @@ const AddProductModal = ({ isOpen, onClose, onSave }) => {
       formData.append('content', productData.content);
       formData.append('price', productData.price);
       formData.append('image', productData.image);
-      productData.subImages.forEach((file) => formData.append('subImages', file));
+
+      productData.subImages.forEach((file) => {
+        if (file) formData.append('subImages', file);
+      });
 
       await axios.post(
         `${import.meta.env.VITE_API_URL}/categories/${selectedCategoryId}/subcategories/${selectedSubcategoryId}/add-product`,
@@ -212,21 +213,35 @@ const AddProductModal = ({ isOpen, onClose, onSave }) => {
             />
           </div>
 
+          {/* === Sub Images Upload Boxes === */}
           <div className="apm-form-group">
-            <input
-              id="apm-subImages"
-              name="subImages"
-              type="file"
-              multiple
-              onChange={handleSubImagesChange}
-              accept="image/*"
-              className="apm-input-file"
-            />
-            {productData.subImages.length > 0 && (
-              <p style={{ fontSize: "0.9rem", color: "#666" }}>
-                {productData.subImages.length} image(s) selected (max 3)
-              </p>
-            )}
+            <label className="apm-label">Sub Images (max 3)</label>
+            <div className="subimages-container">
+              {[0, 1, 2].map((index) => (
+                <div key={index} className="subimage-box">
+                  {productData.subImages[index] ? (
+                    <img
+                      src={URL.createObjectURL(productData.subImages[index])}
+                      alt={`Sub ${index + 1}`}
+                      className="subimage-preview"
+                    />
+                  ) : (
+                    <label className="upload-placeholder">
+                      +
+                      <input
+                        type="file"
+                        accept="image/*"
+                        onChange={(e) => {
+                          const file = e.target.files[0];
+                          if (file) handleSubImageUpload(file, index);
+                        }}
+                        style={{ display: "none" }}
+                      />
+                    </label>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
 
           <div className="apm-buttons">
