@@ -35,34 +35,34 @@ export const metaByProductName = {
     url: "https://coachingpromo.in/apparel/teacher-jacket"
   },
   "graduation-hat": {
-    title: "Graduation Hats for Coaching Ceremonies – Custom Branding",
-    description: "Buy premium graduation hats with custom logos for coaching students. Perfect for farewell events, ceremonies & photoshoots. Bulk orders available.",
+    title: "Custom Graduation Hats for Coaching Institutes | CoachingPromo",
+    description: "Custom Graduation Hats for Coaching Institutes by CoachingPromo. Perfect for student ceremonies, events & celebrations. Stylish, high-quality, and available with fast bulk delivery!",
     url: "https://coachingpromo.in/apparel/graduation-hats"
   },
   "graduation-gown": {
-    title: "Graduation Gowns for Students – Custom Coaching Attire",
-    description: "Order high-quality graduation gowns for coaching students. Ideal for convocation, farewell & ceremonies. Bulk orders with custom branding & fast delivery.",
+    title: "Custom Graduation Gowns for Coaching Institutes | CoachingPromo",
+    description: "Custom Graduation Gowns for Coaching Institutes by CoachingPromo. Perfect for student ceremonies, staff events & celebrations. High-quality, stylish & available with fast bulk delivery!",
     url: "https://coachingpromo.in/apparel/graduation-gowns"
   },
   
   "graduation-stole": {
-    title: "Graduation Stoles for Coaching Students – Custom Logo Print",
-    description: "Shop graduation stoles with logo printing for coaching institutes. Perfect for convocation & farewell events. Elegant look, bulk orders available PAN India.",
+    title: "Custom Graduation Stoles with Logo for Coaching Institutes | CoachingPromo",
+    description: "Celebrate achievements with Custom Graduation Stoles featuring your Coaching Institute’s Logo. Perfect for students, staff & events. Stylish, high-quality & available with fast bulk delivery!",
     url: "https://coachingpromo.in/apparel/graduation-stoles"
   },
   "convocation-sash": {
-    title: "Convocation Sash for Students – Custom Branding Available",
-    description: "Buy elegant convocation sashes for coaching students. Customizable with logos & institute names. Ideal for ceremonies. Bulk orders with PAN India delivery.",
+    title: "Premium Custom Convocation Sashes with Logo | CoachingPromo",
+    description: "Celebrate achievements with Premium Custom Convocation Sashes featuring your Coaching Institute’s Logo. Perfect for students, staff & events. Stylish, high-quality & fast bulk delivery!",
     url: "https://coachingpromo.in/apparel/convocation-sash"
   },
   "graduation-hood": {
-    title: "Graduation Hoods – Custom Academic Hoods for Ceremonies",
-    description: "Premium graduation hoods for coaching and schools. Customize with institute colors & logo. Ideal for convocation ceremonies. Fast PAN India delivery.",
+    title: "Premium Custom Graduation Hoods for Coaching Institutes | CoachingPromo",
+    description: "Elevate your coaching institute’s ceremonies with Premium Custom Graduation Hoods. Perfect for students, staff & events. Stylish, high-quality & available with fast bulk delivery!",
     url: "https://coachingpromo.in/apparel/graduation-hoo"
   },
   "kids-graduation-gown-and-cap": {
-    title: "Kids Graduation Gown & Cap – Custom Convocation Sets",
-    description: "Shop kids' graduation gowns and caps for coaching ceremonies. Comfortable, elegant, and customizable with logos. Bulk order & fast delivery available.",
+    title: "Custom Kids Graduation Gowns & Caps | CoachingPromo",
+    description: "Celebrate young achievers with Custom Kids Graduation Gowns & Caps by CoachingPromo. Perfect for student ceremonies & school events. Stylish, comfortable & fast bulk delivery!",
     url: "https://coachingpromo.in/apparel/kids-graduation-gown-cap"
   },
   "institute-backpack": {
@@ -71,13 +71,13 @@ export const metaByProductName = {
     url: "https://coachingpromo.in/bags/institute-backpack"
   },
   "backpacks": {
-    title: "Custom Backpacks with Logo – Promotional Bags India",
-    description: "Explore our custom backpacks – perfect for coaching institutes, schools & events. Add your logo, choose bulk quantities, and get fast delivery PAN India.",
+    title: "Custom Backpacks for Coaching Institutes | Logo Printed Bags",
+    description: "Custom Backpacks for Coaching Institutes with Logo Printed Bags. Durable, stylish & perfect for students, staff & promotional events. Available in bulk with fast delivery!",
     url: "https://coachingpromo.in/bags/backpacks"
   },
   "jute-bag": {
-    title: "Eco-Friendly Jute Bags with Logo – Custom Printed Bags",
-    description: "Buy reusable jute bags with your coaching logo. Eco-friendly, stylish, and ideal for branding events, giveaways & promotional campaigns. Fast PAN India delivery.",
+    title: "Eco-Friendly Custom Jute Bags | Coaching Institutes India",
+    description: "Go green with Eco-Friendly Custom Jute Bags for Coaching Institutes in India. Perfect for students, staff & events. Stylish, durable & available with fast bulk delivery!",
     url: "https://coachingpromo.in/bags/jute-bags"
   },
   "messenger-bags": {
@@ -96,8 +96,8 @@ export const metaByProductName = {
     url: "https://coachingpromo.in/promotional-items/custom-mugs"
   },
   "water-bottle": {
-    title: "Custom Water Bottles – Branded Coaching Merchandise",
-    description: "Boost your coaching brand with custom water bottles. Ideal for gifts, events & student use. Logo printing available. Bulk orders + PAN India shipping.",
+    title: "Custom Water Bottles for Coaching Institutes | Promotional Gifts",
+    description: "Promote your coaching institute with Custom Water Bottles – ideal promotional gifts for students, staff & events. Stylish, durable & available with fast bulk delivery!",
     url: "https://coachingpromo.in/promotional-items/custom-water-bottles"
   },
   "canopy": {
@@ -106,8 +106,8 @@ export const metaByProductName = {
     url: "https://coachingpromo.in/promotional-items/custom-canopy-tents"
   },
   "rickshaw-hood": {
-    title: "Custom Rickshaw Hoods – Printed with Your Logo",
-    description: "Get high-quality custom rickshaw hoods printed with your coaching or brand logo. Weatherproof, durable & ideal for local promotion. Fast PAN India delivery.",
+    title: "Custom Rickshaw Hoods for Coaching Institutes | Promotional",
+    description: "Custom Rickshaw Hoods for Coaching Institutes – Perfect Promotional Item. Durable, stylish & ideal for institute branding, events & bulk orders. Fast delivery available!",
     url: "https://coachingpromo.in/promotional-items/custom-rickshaw-hood"
   },
   "wall-clocks": {
@@ -121,28 +121,28 @@ export const metaByProductName = {
     url: "https://coachingpromo.in/promotional-items/custom-table-clocks"
   },
   "diary-set": {
-    title: "Custom Diary Set – Branded Corporate Gifting Solutions",
-    description: "Stylish branded diary sets with logo printing. Ideal for educational institutions, seminars, and corporate gifting. Premium quality & PAN India delivery.",
+    title: "Custom Diary Sets for Coaching Institutes | Promotional Gifts",
+    description: "Custom Diary Sets for Coaching Institutes – Ideal Promotional Gifts for students, staff & events. High-quality, stylish & available in bulk with fast delivery!",
     url: "https://coachingpromo.in/promotional-items/custom-diary-set"
   },
   "paper-stand": {
-    title: "Custom Paper Stand – Promotional Desk Organizer",
-    description: "Branded paper stands for desks – ideal for schools, colleges & offices. Promote your brand with custom-printed organizers. Bulk orders with fast delivery.",
+    title: "Custom Paper Stands for Coaching Institutes | Promotional Items",
+    description: "Custom Paper Stands for Coaching Institutes – Perfect Promotional Items for staff desks, student use & events. Durable, stylish & fast bulk delivery available!",
     url: "https://coachingpromo.in/promotional-items/custom-paper-stand"
   },
   "mobile-stand": {
-    title: "Custom Mobile Stand – Branded Desk Accessory",
-    description: "Promote your brand with stylish custom mobile stands. Ideal for events, offices, and student giveaways. Durable, compact & logo-printed. Bulk orders available.",
+    title: "Custom Mobile Stands for Coaching Institutes | Promotional Gifts",
+    description: "Custom Mobile Stands for Coaching Institutes – Ideal Promotional Gifts for students, staff & events. Stylish, durable & available in bulk with fast delivery!",
     url: "https://coachingpromo.in/promotional-items/custom-mobile-stand"
   },
   "planner": {
-    title: "Custom Planners – Personalized Corporate Gifting",
-    description: "Boost your brand with premium custom planners. Ideal for offices, events, or giveaways. Add your logo & message. PAN India delivery. Bulk deals available.",
+    title: "Custom Planners for Coaching Institutes | Promotional Stationery",
+    description: "Custom Planners for Coaching Institutes – Perfect Promotional Stationery for students, staff & events. Stylish, durable & available in bulk with fast delivery!",
     url: "https://coachingpromo.in/promotional-items/custom-planner"
   },
   "stress-balls": {
-    title: "Custom Stress Balls – Unique Promotional Giveaways",
-    description: "Squeeze away stress with personalized stress balls. Add your logo for effective brand recall. Great for events, trade shows & giveaways. Bulk orders available.",
+    title: "Custom Stress Balls – Promotional Products for Branding & Events",
+    description: "Custom Stress Balls – Perfect Promotional Products for Coaching Institutes, branding & events. Fun, durable & available in bulk with fast delivery!",
     url: "https://coachingpromo.in/promotional-items/custom-stress-balls"
   },
   "magic-cube": {
@@ -151,23 +151,23 @@ export const metaByProductName = {
     url: "https://coachingpromo.in/promotional-items/custom-magic-cube"
   },
   "wristbands": {
-    title: "Custom Wristbands – Promotional Rubber Bands with Logo",
-    description: "Boost brand recall with personalized wristbands. Durable, stylish & perfect for schools, colleges, and events. Customize with your logo or message.",
+    title: "Custom Wristbands – Promotional Items for Institutes & Corporate Events",
+    description: "Custom Wristbands – Perfect Promotional Items for Coaching Institutes & Corporate Events. Stylish, durable & available in bulk with fast delivery!",
     url: "https://coachingpromo.in/promotional-items/custom-wristbands"
   },
   "custom-flashcards": {
-    title: "Custom Flashcards – Educational & Promotional Cards Printing",
-    description: "Design custom flashcards with your logo or content. Ideal for schools, coaching centers & workshops. Quality printing & PAN India delivery available.",
+    title: "Custom Flashcards – Branded Study Tools for Coaching Institutes",
+    description: "Boost learning with Custom Flashcards – Branded Study Tools for Coaching Institutes. Perfect for students, staff & exam prep. Durable, high-quality & fast bulk delivery!",
     url: "https://coachingpromo.in/promotional-items/custom-flashcards"
   },
   "photo-frame": {
-    title: "Custom Photo Frames – Personalized Corporate Gift Ideas",
-    description: "Order customized photo frames with your branding or logo. Ideal for corporate gifts, award ceremonies & events. Premium quality & fast delivery across India.",
+    title: "Custom Promotional Photo Frames for Institutes | CoachingPromo",
+    description: "Showcase achievements with Custom Promotional Photo Frames for Institutes by CoachingPromo. Stylish, durable & perfect for students, staff & events. Fast bulk delivery!",
     url: "https://coachingpromo.in/promotional-items/photo-frame"
   },
   "mouse-pad": {
-    title: "Custom Mouse Pads – Promotional & Corporate Branding",
-    description: "Get customized mouse pads with your logo. Ideal for office branding, giveaways, and events. Bulk orders available with fast delivery across India.",
+    title: "Custom Mouse Pads with Logo Printing | CoachingPromo",
+    description: "Upgrade your institute’s workspace with Custom Mouse Pads featuring Logo Printing. Ideal for students, staff & promotional events. Durable, stylish & bulk delivery!",
     url: "https://coachingpromo.in/promotional-items/mouse-pad"
   },
   "graduation-accessories": {
@@ -181,13 +181,13 @@ export const metaByProductName = {
     url: "https://coachingpromo.in/promotional-items/graduation-honor-cards"
   },
   "trophy": {
-    title: "Custom Trophies for Schools & Events – CoachingPromo",
-    description: "Buy personalized trophies for school functions, academic events, and competitions. High-quality, customizable, and perfect for every celebration.",
+    title: "Custom Trophies for Coaching Institutes | Corporate Awards India",
+    description: "Custom Trophies for Coaching Institutes – Perfect Corporate Awards in India. Stylish, high-quality & ideal for student achievements, staff recognition & events. Fast bulk delivery available!",
     url: "https://coachingpromo.in/awards/custom-trophies"
   },
   "wooden-trophy": {
-    title: "Elegant Wooden Trophies for Institutions & Events – CoachingPromo",
-    description: "Shop premium wooden trophies ideal for schools, colleges, and corporate awards. Personalize with your logo for lasting impressions.",
+    title: "Premium Wooden Trophies for Coaching Institutes | Custom Awards",
+    description: "Premium Wooden Trophies for Coaching Institutes – Custom Awards for student achievements, staff recognition & events. Durable, stylish & available in bulk with fast delivery!",
     url: "https://coachingpromo.in/awards/wooden-trophies"
   },
   "badges": {
@@ -196,13 +196,13 @@ export const metaByProductName = {
     url: "https://coachingpromo.in/awards/custom-badges"
   },
   "medals": {
-    title: "Custom Medals for Schools & Events – Award Excellence with CoachingPromo",
-    description: "Honor achievement with personalized medals for schools, sports, and events. Durable metal designs, fully customizable with logo or message. Fast delivery PAN India.",
+    title: "Custom Medals for Coaching Institutes | Award Medals in Bulk",
+    description: "Custom Medals for Coaching Institutes – Perfect Award Medals in Bulk for student achievements, staff recognition & events. Stylish, high-quality & fast delivery available!",
     url: "https://coachingpromo.in/awards/custom-medals"
   },
   "other-awards": {
-    title: "Custom Awards & Plaques – Personalized Recognition by CoachingPromo",
-    description: "Discover a range of custom awards and plaques for schools, institutions, and corporate events. Perfect for recognizing excellence with personalized designs.",
+    title: "Unique Awards for Coaching Institutes | Custom Recognition Gifts",
+    description: "Unique Awards for Coaching Institutes – Custom Recognition Gifts for students, staff & special events. Stylish, durable & available in bulk with fast delivery!",
     url: "https://coachingpromo.in/awards/other-awards"
   },
   "table-calendar": {
@@ -216,43 +216,43 @@ export const metaByProductName = {
     url: "https://coachingpromo.in/stationery/custom-wall-calendars"
   },
   "notebook": {
-    title: "Custom Notebooks with Logo – Personalized Stationery | CoachingPromo",
-    description: "Perfect for branding, student giveaways & events. High-quality covers & pages. Bulk orders available.",
+    title: "Custom Notebooks for Coaching Institutes | Promotional Stationery",
+    description: "Boost learning with Custom Notebooks for Coaching Institutes. Perfect Promotional Stationery for students, staff & events. Durable, stylish & fast bulk delivery!",
     url: "https://coachingpromo.in/stationery/custom-notebooks"
   },
   "notepad": {
-    title: "Custom Notepads with Logo – Branded Stationery for Institutes | CoachingPromo",
-    description: "Order custom notepads printed with your institute or brand logo. Ideal for coaching centers, offices, and giveaways. Premium paper & fast bulk printing available.",
+    title: "Custom Printed Notepads for Coaching Institutes | CoachingPromo",
+    description: "Custom Printed Notepads for Coaching Institutes by CoachingPromo. Ideal for students, staff & promotional events. Stylish, durable & fast bulk delivery available!",
     url: "https://coachingpromo.in/stationery/custom-notepads"
   },
   "exam-pad": {
-    title: "Custom Exam Pads with Logo – Durable & Branded Writing Boards | CoachingPromo",
-    description: "Buy personalized exam pads printed with your institute’s logo. Strong & lightweight writing pads ideal for coaching classes and exam use. Bulk orders with fast delivery.",
+    title: "Custom Exam Pads for Coaching Institutes | Promotional Stationery",
+    description: "Enhance exam prep with Custom Exam Pads for Coaching Institutes. Perfect for students, staff & events. Stylish, durable & available in bulk delivery!",
     url: "https://coachingpromo.in/stationery/custom-exam-pads"
   },
   "binder-clips": {
-    title: "Custom Binder Clips – Branded Office Stationery for Coaching & Institutes",
-    description: "Order customized binder clips with your coaching or institute logo. Perfect for organizing documents and adding a professional touch to stationery kits. Bulk deals available.",
+    title: "Custom Binder Clips with Logo Printing | CoachingPromo",
+    description: "Organize efficiently with Custom Binder Clips featuring Logo Printing. Ideal for Coaching Institutes, staff & students. Durable, stylish & fast bulk delivery available!",
     url: "https://coachingpromo.in/stationery/custom-binder-cli"
   },
   "handbill": {
-    title: "Custom Handbills Printing – Promotional Flyers for Coaching Institutes",
-    description: "Design and print personalized handbills for your coaching institute. Ideal for promotions, events, and admissions. Affordable bulk printing with fast delivery across India.",
+    title: "Custom handbill printing for Coaching Institutes | CoachingPromo",
+    description: "Promote your institute with Custom Handbill Printing by CoachingPromo. Perfect for events, branding & student engagement. Stylish, high-quality & bulk delivery!",
     url: "https://coachingpromo.in/stationery/custom-handbills"
   },
   "lanyard-and-id-card": {
-    title: "Custom Lanyards & ID Cards for Coaching Staff and Students – CoachingPromo.in",
-    description: "Get customized lanyards and ID cards for your coaching institute. Durable, professional-quality materials with logo printing. Ideal for staff, students, and events. Fast delivery across India.",
+    title: "Custom Lanyards & ID Cards for Coaching Institutes | Branding",
+    description: "Brand your institute with Custom Lanyards & ID Cards. Perfect for students, staff & events. Durable, stylish & available in bulk with fast delivery!",
     url: "https://coachingpromo.in/stationery/lanyard-id-card"
   },
   "attendance-registers": {
-    title: "Buy Attendance Registers for Coaching Institutes – CoachingPromo.in",
-    description: "Track daily attendance efficiently with premium-quality attendance registers. Ideal for coaching centers, schools, and institutes. Bulk orders available with fast delivery across India.",
+    title: "Custom Attendance Registers for Coaching Institutes | Stationery",
+    description: "Track attendance efficiently with Custom Attendance Registers for Coaching Institutes. Ideal for staff & student use. Durable, stylish & bulk delivery available!",
     url: "https://coachingpromo.in/stationery/attendance-registers"
   },
   "pencils": {
-    title: "Buy Custom Pencils in Bulk – School & Coaching Branding | CoachingPromo.in",
-    description: "Order branded pencils for schools and coaching centers at wholesale prices. Customize with your logo for perfect promotional stationery. Quality guaranteed with bulk supply and fast delivery.",
+    title: "Custom Pencils with Logo Printing for Coaching Institutes",
+    description: "Promote your brand with Custom Pencils featuring Logo Printing. Perfect for students, staff & coaching events. Stylish, durable & fast bulk delivery available!",
     url: "https://coachingpromo.in/stationery/pencils"
   },
   "erasers": {
@@ -266,13 +266,13 @@ export const metaByProductName = {
     url: "https://coachingpromo.in/stationery/highlighters"
   },
   "markers": {
-    title: "Custom Markers for Coaching & Office Use – Logo Printed | CoachingPromo.in",
-    description: "Shop personalized markers ideal for coaching centers, offices, and schools. Customize with your brand logo for effective promotions. Bulk orders, vibrant colors, and smooth writing guaranteed.",
+    title: "Custom Markers with Logo Printing for Coaching Institutes",
+    description: "Custom Markers with Logo Printing – Perfect for Coaching Institutes, students & staff. Durable, stylish & available in bulk with fast delivery!",
     url: "https://coachingpromo.in/stationery/markers"
   },
   "metal-pen": {
-    title: "Premium Metal Pens with Logo – Custom Engraved | CoachingPromo.in",
-    description: "Order high-quality metal pens customized with your logo – perfect for branding, gifts, and promotional use in coaching institutes and corporates. Stylish, durable & impactful.",
+    title: "Custom Metal Pens with Logo Printing for Coaching Institutes",
+    description: "Custom Metal Pens with Logo Printing – Perfect for Coaching Institutes, staff & student gifts. Stylish, durable & available in bulk with fast delivery!",
     url: "https://coachingpromo.in/stationery/metal-pen"
   },
   "plastic-pen": {
@@ -281,13 +281,13 @@ export const metaByProductName = {
     url: "https://coachingpromo.in/stationery/plastic-pen"
   },
   "file--folder": {
-    title: "Custom File & Folder Printing – Branded Office Stationery | CoachingPromo.in",
-    description: "Promote your coaching brand with customized files and folders. Perfect for schools, institutes, and office use. Durable, stylish, and budget-friendly options available.",
+    title: "Custom Files & Folders with Logo | CoachingPromo",
+    description: "Custom Files & Folders with Logo – Ideal for Coaching Institutes, students & staff. Stylish, durable & available in bulk with fast delivery!",
     url: "https://coachingpromo.in/stationery/file-folder"
   },
   "kobra-file": {
-    title: "Customized Kobra Files for Office & Institutes – CoachingPromo.in",
-    description: "Organize documents with branded Kobra files. Ideal for schools, coaching centers, and corporate use. Premium quality, logo printing available at best prices.",
+    title: "Custom Kobra Files with Logo for Coaching Institutes",
+    description: "Custom Kobra Files with Logo – Perfect for Coaching Institutes, staff & students. Durable, stylish & fast bulk delivery available!",
     url: "https://coachingpromo.in/stationery/kobra-file"
   },
   "paper-file-folder": {

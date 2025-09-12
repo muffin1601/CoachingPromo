@@ -196,7 +196,7 @@ export const subcategoryTemplates = {
         metaDescription: "Shop {productName}, company t-shirts & business logo shirts with custom logo embroidery. Perfect for corporate clothing, staff uniforms & promotional business shirts."
     },
     "Hoodies-jackets": {
-        productTitle: "{productName} for Men | Custom Hoodies & Branding",
+        productTitle: "{productName} | Custom Hoodies & Branding",
         shortDescription: "Stylish {productName} – perfect for casual wear, winter uniforms, corporate branding, promotional giveaways & an alternative to jackets or sweaters.",
         longDescription: `
     <h3>Product Description:</h3>
@@ -250,7 +250,7 @@ export const subcategoryTemplates = {
         metaDescription: "Shop {productName} for men – ideal for staff uniforms, winter branding & promotions. Also explore customized hoodies, personalized hoodies & custom sweatshirts."
     },
     "Nehru Jacket": {
-        productTitle: "{productName} for Men | Custom Ethnic Jackets & Branding",
+        productTitle: "{productName} | Custom Ethnic Jackets & Branding",
         shortDescription: "Stylish {productName} – perfect for formal events, staff uniforms, wedding wear, corporate branding, cultural celebrations & promotional campaigns.",
         longDescription: `
     <h3>Product Description:</h3>
