@@ -9,6 +9,7 @@ import ContactForm from "../components/ContactForm";
 import OfferBanner from "../components/OfferBanner";
 import QualitySection from "../components/QualitySection";
 import SeoFooterText from "../components/SeoFooterText";
+import Content from "../components/Content";
 
 const Home = () => {
   const offerBannerRef = useRef(null);
@@ -36,6 +37,7 @@ const Home = () => {
       <HowItWorks />
       <ContactForm />
       <QualitySection />
+      <Content />
       <SeoFooterText />
     </div>
   );
