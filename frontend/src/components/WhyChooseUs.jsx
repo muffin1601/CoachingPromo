@@ -47,7 +47,7 @@ const WhyChooseUs = () => {
                   transition={{ duration: 1.2, ease: "easeOut" }}
                   className="animated-section"
                 >
-                  <img src={item.img} alt={`${item.title} icon`} className="icon-check" />
+                  <img src={item.img} loading="lazy" alt={`${item.title} icon`} className="icon-check" />
                   <h3>{item.title}</h3> {/* Changed h4 → h3 */}
                   <p>{item.desc}</p>
                 </motion.div>
@@ -55,7 +55,7 @@ const WhyChooseUs = () => {
             );
           })}
         </div>
-        <img src="/assets/photo.webp" alt="Promotional products showcase" className="photo" />
+        <img src="/assets/photo.webp" loading="lazy" alt="Promotional products showcase" className="photo" />
         <div className="benefits-2">
           {benefits_2.map((item, idx) => {
             const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 });
@@ -69,7 +69,7 @@ const WhyChooseUs = () => {
                   transition={{ duration: 1.2, ease: "easeOut" }}
                   className="animated-section"
                 >
-                  <img src={item.img} alt={`${item.title} icon`} className="icon-check" />
+                  <img src={item.img} loading="lazy" alt={`${item.title} icon`} className="icon-check" />
                   <h3>{item.title}</h3> {/* Changed h4 → h3 */}
                   <p>{item.desc}</p>
                 </motion.div>

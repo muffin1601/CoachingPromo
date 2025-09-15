@@ -68,6 +68,7 @@ const CategorySlider = ({ category }) => {
                     <FaHeart />
                   </button>
                   <img
+                  loading="lazy"
                     src={`${import.meta.env.VITE_IMAGE_API_URL}${product.image}`}
                     alt={product.name}
                     className="product-image"

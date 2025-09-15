@@ -169,7 +169,7 @@ console.log("Template key:", getTemplateKey(deslugNames.productName));
           {relatedProducts.map((item) => (
             <SwiperSlide key={item._id}>
               <div className="related-product-card">
-                <img src={`${import.meta.env.VITE_IMAGE_API_URL}${item.image}`} alt={item.name} className="related-product-image" />
+                <img loading="lazy" src={`${import.meta.env.VITE_IMAGE_API_URL}${item.image}`} alt={item.name} className="related-product-image" />
                 <h3 className="related-product-name">{item.name}</h3>
                 <Link to={`/${catSlug}/${prodSlug}/${slugify(item.name)}`} className="view-button">
                   <FaEye /> View
@@ -208,6 +208,7 @@ console.log("Template key:", getTemplateKey(deslugNames.productName));
               {[product.image, ...product.subImages].map((img, idx) => (
                 img && (
                   <img
+                    loading="lazy"
                     key={idx}
                     src={`${import.meta.env.VITE_IMAGE_API_URL}${img}`}
                     alt={`${product.name} ${idx}`}
@@ -221,6 +222,7 @@ console.log("Template key:", getTemplateKey(deslugNames.productName));
           <div className="product-image-section-1">
             <img
               className="main-product-image-1"
+              loading="lazy"
               src={`${import.meta.env.VITE_IMAGE_API_URL}${mainImage}`}
               alt={product.name}
             />

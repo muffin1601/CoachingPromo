@@ -35,7 +35,7 @@ const SearchResults = () => {
           {results.length > 0 ? (
             results.map((item, index) => (
               <div className="subproduct-card" key={index}>
-                <img src={item.image} alt={item.name} />
+                <img src={item.image} loading="lazy" alt={item.name} />
                 <div className="subproduct-text">
                   <h3>{item.name}</h3>
                   <p>{item.content}</p>

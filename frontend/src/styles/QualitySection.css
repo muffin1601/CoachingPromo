@@ -94,11 +94,11 @@
 }
 
 .branding-benefit-item {
-  background: #e8f4fc;
+  background: #f8fcff;
   padding: 0.8rem 1.5rem;
   border-radius: 50px;
   font-weight: 600;
-  color: #2980b9;
+  color: #000000;
 }
 
 /* Responsive */

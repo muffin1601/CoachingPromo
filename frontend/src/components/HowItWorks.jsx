@@ -37,7 +37,7 @@ const HowItWorks = () => {
                 transition={{ duration: 1.2, ease: "easeOut" }}
                 className="animated-section"
               >
-                <img src={step.icon} alt={`${step.title} icon`} className="icon-obj" />
+                <img src={step.icon} loading="lazy" alt={`${step.title} icon`} className="icon-obj" />
                 <h3>{step.title}</h3> {/* Changed h4 → h3 */}
                 <p>{step.desc}</p>
               </motion.div>

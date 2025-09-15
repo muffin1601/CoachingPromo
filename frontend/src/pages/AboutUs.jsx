@@ -21,7 +21,7 @@ const AboutUs = () => {
 
           <div className="about-content">
             <div className="about-image-container">
-              <img src="/assets/about.png" className="about-image" alt="About CoachingPromo" />
+              <img loading="lazy" src="/assets/about.png" className="about-image" alt="About CoachingPromo" />
             </div>
 
             <div className="about-text">

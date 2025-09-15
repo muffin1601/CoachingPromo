@@ -44,6 +44,7 @@ const BlogDetail = () => {
           ) : (
             <img
               className="blog-detail-media"
+              loading="lazy"
               src={`${import.meta.env.VITE_IMAGE_API_URL}/uploads/blogs/${blog.media}`}
               alt={blog.title}
               width="100%"

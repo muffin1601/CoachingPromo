@@ -73,7 +73,7 @@ const HeroSection = ({ offerBannerRef }) => {
                   className="media"
                 />
               ) : (
-                <img src={slide.src} alt={slide.title} className="media" />
+                <img src={slide.src} loading="lazy" alt={slide.title} className="media" />
               )}
               {/* Only show overlay, tag, and button if id is not 1 or 2 */}
               {slide.id !== 1 && slide.id !== 2 && (

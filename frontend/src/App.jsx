@@ -1,25 +1,31 @@
-import React, { useState, useRef } from "react";
+import React, { useState, lazy, Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import ProductPage from "./pages/ProductPage";
 import FloatingButtons from "./components/FloatingButtons";
-import SingleProductPage from "./pages/SingleProductPage";
-import Login from "./pages/Login";
-import AdminDashboard from "./pages/Admin/AdminDashboard";
-import CustomizerPage from "./pages/CustomizerPage";
-import AboutUs from "./pages/AboutUs";
-import CustomizeLogo from "./pages/CustomizeLogo";
-import BlogList from "./pages/BlogList";
-import BlogDetail from "./pages/BlogDetail";
-import BlogForm from "./pages/BlogForm";
 import RouteProtector from "./components/RouteProtector";
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import SearchResults from "./pages/SearchResults";
-import Navbar from "./components/Navbar"
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import SearchOverlay from "./components/SearchOverlay";
+
+
+const Home = lazy(() => import("./pages/Home"));
+const ProductPage = lazy(() => import("./pages/ProductPage"));
+const SingleProductPage = lazy(() => import("./pages/SingleProductPage"));
+const Login = lazy(() => import("./pages/Login"));
+const AdminDashboard = lazy(() => import("./pages/Admin/AdminDashboard"));
+const CustomizerPage = lazy(() => import("./pages/CustomizerPage"));
+const AboutUs = lazy(() => import("./pages/AboutUs"));
+const CustomizeLogo = lazy(() => import("./pages/CustomizeLogo"));
+const BlogList = lazy(() => import("./pages/BlogList"));
+const BlogDetail = lazy(() => import("./pages/BlogDetail"));
+const BlogForm = lazy(() => import("./pages/BlogForm"));
+const SearchResults = lazy(() => import("./pages/SearchResults"));
+
+
+const HeroSection = lazy(() => import("./components/HeroSection"));
+
 
 const App = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -27,29 +33,134 @@ const App = () => {
   const toggleSearch = () => setShowSearch(!showSearch);
 
   return (
-    <Router> 
-       <ScrollToTop />
+    <Router>
+      <ScrollToTop />
       <div className="landing-page">
-        <Navbar toggleSidebar={() => setSidebarOpen(!sidebarOpen)} sidebarOpen={sidebarOpen} toggleSearch={toggleSearch} />
+        <Navbar
+          toggleSidebar={() => setSidebarOpen(!sidebarOpen)}
+          sidebarOpen={sidebarOpen}
+          toggleSearch={toggleSearch}
+        />
+
         {showSearch && (
           <SearchOverlay showSearch={showSearch} toggleSearch={toggleSearch} />
         )}
+
+        
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/about" element={<AboutUs />} />
-          <Route path="/blogs" element={<BlogList />} />
-          <Route path="/blogs/new" element={<BlogForm />} />
-          <Route path="/blogs/:id" element={<BlogDetail />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/admin" element={<RouteProtector><AdminDashboard /></RouteProtector>} />
-          <Route path="/:category/:productName" element={<ProductPage />} />
-          <Route path="/:category/:productName/:subproduct" element={<SingleProductPage />} />
-          <Route path="/customize/:productType" element={<CustomizerPage />} />
-          <Route path="/:category/:productName/:subproduct/customize" element={<CustomizeLogo />} />
-          <Route path="/search-results" element={<SearchResults />} />
+          <Route
+            path="/"
+            element={
+              <Suspense fallback={<div>Loading Home...</div>}>
+                <Home />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/home"
+            element={
+              <Suspense fallback={<div>Loading Home...</div>}>
+                <Home />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/about"
+            element={
+              <Suspense fallback={<div>Loading About...</div>}>
+                <AboutUs />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/blogs"
+            element={
+              <Suspense fallback={<div>Loading Blogs...</div>}>
+                <BlogList />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/blogs/new"
+            element={
+              <Suspense fallback={<div>Loading Blog Form...</div>}>
+                <BlogForm />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/blogs/:id"
+            element={
+              <Suspense fallback={<div>Loading Blog...</div>}>
+                <BlogDetail />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/login"
+            element={
+              <Suspense fallback={<div>Loading Login...</div>}>
+                <Login />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/admin"
+            element={
+              <RouteProtector>
+                <Suspense fallback={<div>Loading Admin Dashboard...</div>}>
+                  <AdminDashboard />
+                </Suspense>
+              </RouteProtector>
+            }
+          />
+          <Route
+            path="/:category/:productName"
+            element={
+              <Suspense fallback={<div>Loading Product...</div>}>
+                <ProductPage />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/:category/:productName/:subproduct"
+            element={
+              <Suspense fallback={<div>Loading Product...</div>}>
+                <SingleProductPage />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/customize/:productType"
+            element={
+              <Suspense fallback={<div>Loading Customizer...</div>}>
+                <CustomizerPage />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/:category/:productName/:subproduct/customize"
+            element={
+              <Suspense fallback={<div>Loading Customize Logo...</div>}>
+                <CustomizeLogo />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/search-results"
+            element={
+              <Suspense fallback={<div>Searching...</div>}>
+                <SearchResults />
+              </Suspense>
+            }
+          />
         </Routes>
-        <FloatingButtons />
+
+        {/* Optional lazy-loaded floating buttons */}
+        <Suspense fallback={null}>
+          <FloatingButtons />
+        </Suspense>
+
         <ToastContainer
           position="top-right"
           autoClose={3000}
@@ -64,11 +175,11 @@ const App = () => {
           className="custom-toast-container"
           toastClassName="custom-toast"
         />
+
         <Footer />
       </div>
     </Router>
   );
 };
-
 
 export default App;

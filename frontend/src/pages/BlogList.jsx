@@ -60,6 +60,7 @@ const BlogList = () => {
                 ) : (
                   <img
                     className="blog-card-media"
+                    loading="lazy"
                     src={`${import.meta.env.VITE_IMAGE_API_URL}/uploads/blogs/${blog.media}`}
                     alt={blog.title}
                     width="100%"

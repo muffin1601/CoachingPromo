@@ -77,7 +77,7 @@ const ProductPage = () => {
             const subproductSlug = slugify(sub.name);
             return (
               <div key={index} className="subproduct-card">
-                <img src={`${import.meta.env.VITE_IMAGE_API_URL}${sub.image}`} alt={sub.name} />
+                <img loading="lazy" src={`${import.meta.env.VITE_IMAGE_API_URL}${sub.image}`} alt={sub.name} />
                 <div className="subproduct-text">
                   <h3 className="subproduct-name">{sub.name}</h3>
                   <p className="subproduct-content">{sub.content}</p>
@@ -122,7 +122,7 @@ const ProductPage = () => {
                 return (
                   <SwiperSlide key={idx}>
                     <div className="related-card">
-                      <img src={`${import.meta.env.VITE_IMAGE_API_URL}${subcat.image}`} alt={subcat.name} className="related-image" />
+                      <img  loading="lazy" src={`${import.meta.env.VITE_IMAGE_API_URL}${subcat.image}`} alt={subcat.name} className="related-image" />
                       <h4 className="related-title">{subcat.name}</h4>
                       <button className="cta-button" onClick={() => navigate(`/${categorySlug}/${subcatSlug}`)}>View Products</button>
                     </div>
