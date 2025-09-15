@@ -8,10 +8,10 @@ const BrandingSolutions = () => {
         
         <header className="branding-solutions-header">
           <h2 id="branding-solutions-heading" className="branding-solutions-title">
-            Tailored Branding Solutions for Coaching Institutes
+            Tailored Promotional Solutions for Coaching Institutes
           </h2>
           <p className="branding-solutions-lead">
-            Every coaching institute is unique, and so are its branding needs. At CoachingPromo, we provide custom promotional products for coaching institutes that help you leave a lasting impression on students, staff, and visitors.
+            Every coaching institute has unique branding and promotional goals — and we’re here to help you achieve them. At CoachingPromo, we offer custom promotional products for coaching institutes that build a strong brand identity and leave a lasting impression on students, staff, and visitors. From custom t-shirts, branded bags, bulk stationery kits, and welcome kits to event giveaways and premium corporate gifts, our solutions are designed to deliver style, utility, and maximum brand impact — helping your institute stand out in Delhi, Okhla, South Delhi, and Gurgaon.
           </p>
         </header>
         

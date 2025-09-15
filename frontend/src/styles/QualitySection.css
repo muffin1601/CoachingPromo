@@ -26,10 +26,11 @@
 .branding-solutions-lead {
   font-size: 1.2rem;
   color: #555;
-  max-width: 800px;
+  max-width: 1300px;
   margin: 0 auto;
   line-height: 1.6;
 }
+
 
 /* Solutions grid */
 .branding-solutions-grid {

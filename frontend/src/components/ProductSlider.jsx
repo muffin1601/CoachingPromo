@@ -15,10 +15,9 @@ const ProductSlider = () => {
 
   return (
     <div className="product-sliders">
-      <h2>Explore Our Best-Selling Products</h2>
+      <h2>Check Out Our Top Promotional Products for Coaching Institutes</h2>
       <p className="subtitle-cat">
-        Branded Merchandise Tailored for Coaching Institutes – Boost Your Brand
-        with Style & Utility
+        Boost your coaching institute’s visibility with our promotional products for coaching institutes in Delhi, Okhla, South Delhi, and Gurgaon. Get custom t-shirts, bags, premium stationery, and event giveaways designed to combine style and practicality, helping your institute build a stronger and more recognizable brand identity.
       </p>
       {categories.map((category) => (
         <CategorySlider key={category._id} category={category} />
