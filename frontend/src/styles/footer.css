@@ -3,9 +3,10 @@
     color: #333;
     padding: 20px 20px 0 20px;
     text-align: center;
-    min-height: 100px;
+    min-height: 200px; /* slightly larger to reserve space */
     border-top: 1px solid #ddd;
 }
+
 
 .footer-content {
     display: flex;

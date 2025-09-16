@@ -11,7 +11,7 @@ const AdminDashboard = () => {
       </aside>
       <main className="main-content">
         <div className="content-wrapper">
-          <h1 className="dashboard-title">Admin Dashboard</h1>
+          
           <ProductsTable />
         </div>
       </main>

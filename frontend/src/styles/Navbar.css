@@ -1,11 +1,10 @@
-
-
-/* General Reset */
 body {
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
+  padding-top: 90px; /* 50px top-banner + 40px navbar */
 }
+
 
 /* Top Banner */
 .top-banner {

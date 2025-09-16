@@ -1,7 +1,7 @@
 /* Sidebar container */
 .sidebar {
   /* position: fixed; */
-  margin-top: 112px; /* height of your navbar */
+
   left: 0;
   min-height: 50vh;
  overflow-y: auto;

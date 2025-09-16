@@ -124,7 +124,7 @@ const ProductPage = () => {
                     <div className="related-card">
                       <img  loading="lazy" src={`${import.meta.env.VITE_IMAGE_API_URL}${subcat.image}`} alt={subcat.name} className="related-image" />
                       <h4 className="related-title">{subcat.name}</h4>
-                      <button className="cta-button" onClick={() => navigate(`/${categorySlug}/${subcatSlug}`)}>View Products</button>
+                      <button className="view-button" onClick={() => navigate(`/${categorySlug}/${subcatSlug}`)}>View Products</button>
                     </div>
                   </SwiperSlide>
                 );

@@ -2,6 +2,9 @@
     margin: 0;
     padding: 0;
 }
+body, .top-banner, .navbar, .footer, h1, h2, h3, p {
+    font-family: 'Poppins', Arial, sans-serif;
+}
 
 html, body {
     overflow-x: hidden;
@@ -10,18 +13,19 @@ html, body {
   
   .block-middle {
   display: flex;
-  gap: 30px; /* space between columns */
+  gap: 30px; 
   justify-content: center;
   align-items: flex-start;
-  flex-wrap: wrap; /* allows stacking on smaller screens */
+  flex-wrap: wrap; 
   padding: 20px 20px 0 20px;
 }
 
-/* Each child takes roughly half width, but adjusts on smaller screens */
+
+
 .block-middle > * {
-  flex: 1 1 48%; /* grow, shrink, basis ~48% width */
+  flex: 1 1 48%; 
   width: 100%;
-  min-width: 320px; /* prevent too small on very narrow screens */
+  min-width: 320px; 
   box-sizing: border-box;
 }
 

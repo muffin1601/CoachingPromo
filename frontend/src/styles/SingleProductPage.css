@@ -7,7 +7,7 @@
 }
 
 .single-product-container-1 {
-  margin-top: 120px;
+ 
   display: flex;
   width: 80%;
   flex-wrap: wrap;
@@ -19,7 +19,7 @@
 
 /* 🔹 Product Image Section */
 .product-image-container-2 {
-  padding: 10px 30px 0 30px;
+  padding: 0px 30px 0 30px;
   border-radius: 30px;
   display: flex;
   gap: 30px;

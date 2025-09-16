@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { fabric } from "fabric";
 import { useLocation ,useParams} from "react-router-dom";
 import { Helmet } from "react-helmet";
-
+import "../styles/CustomizerPage.css";
 import CanvasToolbar from "../components/customizaton/CanvasToolbar";
 import ThumbnailGallery from "../components/customizaton/ThumbnailGallery";
 import VerticalToolbar from "../components/customizaton/VerticalToolbar";
