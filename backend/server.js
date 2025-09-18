@@ -49,7 +49,7 @@ app.use ("/api/visitors", visitorRoutes);
 app.use("/api", categoryRoutes);
 app.use("/api", subcategoryRoutes);
 app.use("/api", productRoutes);
-app.use("/", emailRoutes);
+app.use("/api", emailRoutes);
 app.use("/api", adminRoutes);
 app.use("/api", bannerRoutes);
 app.use("/api", searchRoutes);
