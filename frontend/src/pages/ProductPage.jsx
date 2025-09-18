@@ -99,8 +99,8 @@ const ProductPage = () => {
         <div className="cta-section">
           <h2 className="cta-heading">📦 Bulk Orders | 🖨️ Custom Designs & Logo Engraving | 🚚 Fast Pan-India Delivery</h2>
           <p className="cta-contact">
-            <FaWhatsapp className="icn" /> <a href="https://wa.me/+919266013059" target="_blank" rel="noopener noreferrer">+91 9266 013059</a> &nbsp;|&nbsp;
-            <FaGlobe className="icn-2" /> <a href="https://www.coachingpromo.in" target="_blank" rel="noopener noreferrer">www.CoachingPromo.in</a>
+            <FaWhatsapp className="icn" /> <a href="https://wa.me/+918750708222" target="_blank" rel="noopener noreferrer">+91 8750 708222</a> &nbsp;|&nbsp;
+            <FaGlobe className="icn-2" /> <a href="mailto:sales@coachingpromo.in" target="_blank" rel="noopener noreferrer">sales@coachingpromo.in</a>
           </p>
         </div>
         {relatedSubcategories.length > 0 && (

@@ -9,7 +9,7 @@ router.post("/send-email", async (req, res) => {
   try {
     const response = await resend.emails.send({
       from: "no-reply@coachingpromo.in",
-      to: "sales@mfglobalservices.com",
+      to: "sales@coachingpromo.in",
       reply_to: email,
       subject: "New Enquiry from CoachingPromo",
       text: `

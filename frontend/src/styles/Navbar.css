@@ -29,7 +29,7 @@ body {
   width: 100%;
   background: #fff;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  padding: 15px 20px;
+  padding: 0px 20px;
   display: flex;
   justify-content: center;
   z-index: 100;
@@ -48,18 +48,9 @@ body {
   padding-right: 20px;
 }
 
-/* Logo */
-.logo a {
-  font-size: 27px;
-  font-weight: bold;
-  color: #333;
-  text-decoration: none;
+.logo-main {
+  height: 80px;
 }
-
-.logo span {
-  color: #1565c0;
-}
-
 /* Mobile Menu Icon */
 .menu-icon-btn {
   display: none;

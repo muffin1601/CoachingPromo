@@ -42,9 +42,7 @@ const Navbar = ({ toggleSearch }) => {
         <div className="nav-container">
           <div className="mobile-header">
             <div className="logo">
-              <a href="/">
-                Coaching<span>Promo</span>
-              </a>
+              <img src="/logo.webp" loading="lazy" alt="logo" className="logo-main" />
             </div>
           </div>
 

@@ -104,10 +104,10 @@ const Footer = () => {
 
         <div className="contact-info">
           <p className="footer-text">
-            Email: <a href="mailto:contact@coachingpromo.in">contact@coachingpromo.in</a>
+            Email: <a href="mailto:sales@coachingpromo.in">sales@coachingpromo.in</a>
           </p>
           <p className="footer-text">
-            Phone: <a href="tel:+919266013059">+91 9266 013059</a>
+            Phone: <a href="tel:+918750708222">+91 8750 708222</a>
           </p>
         </div>
 
