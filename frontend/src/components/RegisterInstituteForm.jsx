@@ -24,21 +24,23 @@ const RegisterInstituteForm = ({ showRegistrationForm, toggleRegistrationForm })
     setSuccess("");
   };
 
-  const handleSubmit = async (e) => {
+   const handleSubmit = async (e) => {
     e.preventDefault();
+
     try {
-      const res = await axios.post(
-        `${import.meta.env.VITE_API_URL}/register-institute`,
-        formData
-      );
+      // 1. Send lead to CRM
+      const crmRes = await axios.post(import.meta.env.VITE_CRM_API_URL, formData, {
+        headers: {
+          "Content-Type": "application/json",
+          "x-api-key": import.meta.env.VITE_CRM_API_KEY,
+        },
+      });
 
-      if (res.status === 200 || res.status === 201) {
+      // 2. Send email
+      const emailRes = await axios.post(`${import.meta.env.VITE_API_URL}/send-email`, formData);
+
+      if ((crmRes.status === 200 || crmRes.status === 201) && (emailRes.status === 200 || emailRes.status === 201)) {
         toast.success("Institute registered successfully!");
-        setSuccess("Institute registered successfully!");
-
-        setTimeout(() => {
-          toggleRegistrationForm();
-        }, 1000);
 
         setFormData({
           name: "",
@@ -48,10 +50,16 @@ const RegisterInstituteForm = ({ showRegistrationForm, toggleRegistrationForm })
           category: "",
           description: "",
         });
+
+        setTimeout(() => {
+          toggleRegistrationForm();
+        }, 1000);
+      } else {
+        throw new Error("Failed to register institute");
       }
     } catch (err) {
       console.error(err);
-      setError("Failed to register institute. Please try again.");
+      toast.error("Failed to register institute. Please try again." );
     }
   };
 

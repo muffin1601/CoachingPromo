@@ -38,11 +38,11 @@ const ContactForm = ({ showForm, toggleForm }) => {
     // 2. Send email
     await axios.post(`${import.meta.env.VITE_API_URL}/send-email`, formData);
 
-    // Success message
+   
     toast.success("Thank you! Your inquiry has been submitted.");
     console.log("Lead captured and email sent.");
 
-    // Reset form
+    
     setFormData({
     name: "",
     email: "",
